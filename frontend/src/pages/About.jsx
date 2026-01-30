@@ -5,18 +5,18 @@ export default function About() {
     return (
         <section id="about" className="about-section">
             <div className="about-container">
-                <h2 className="section-title">Sobre Nosotros</h2>
-                <p className="ppal-text about-text">                     
+                <h2 className="section-title">Nosotros</h2>
+                <p className="ppal-text about-text">
                     En Tienda de Guitarras, somos apasionados por la música y nos dedicamos a ofrecer las mejores guitarras y accesorios para músicos de todos los niveles. Nuestra misión es proporcionar productos de alta calidad a precios competitivos, junto con un servicio al cliente excepcional.
                 </p>
                 <p className="ppal-text about-text">
-                    Founded in 2020, Guitar Store has grown rapidly thanks to our dedication to customer satisfaction and our wide selection of products. Whether you're a beginner looking for your first guitar or a professional seeking specialized equipment, we're here to help you find what you need.
+                    Fundada en 2020, Tienda de Guitarras ha crecido rápidamente gracias a nuestra dedicación a la satisfacción del cliente y a nuestra amplia selección de productos. Ya sea que seas un principiante buscando tu primera guitarra o un profesional en busca de equipo especializado, estamos aquí para ayudarte a encontrar lo que necesitas.
                 </p>
                 <p className="ppal-text about-text">
-                    Our team is made up of experienced musicians who understand our customers' needs. We are committed to providing expert advice and support every step of the way.
+                    Nuestro equipo está compuesto por músicos experimentados que entienden las necesidades de nuestros clientes. Estamos comprometidos a brindar asesoramiento experto y apoyo en cada paso del camino.
                 </p>
                 <p className="ppal-text about-text">
-                    Thank you for choosing Guitar Store. We look forward to being part of your musical journey.
+                    Gracias por elegir Tienda de Guitarras. Esperamos ser parte de tu viaje musical.
                 </p>
             </div>
             <div className="social-icons">

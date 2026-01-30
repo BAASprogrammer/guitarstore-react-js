@@ -1,22 +1,22 @@
 [
   {
     "imagen": "banner1.jpg",
-    "titulo": "Welcome to Guitar Store",
-    "subtitulo": "Find your ideal guitar"
+    "titulo": "Bienvenido a Guitarras Pro",
+    "subtitulo": "Encuentra tu guitarra ideal"
   },
   {
     "imagen": "banner2.jpg",
-    "titulo": "Professional quality and sound",
-    "subtitulo": "The best brands within your reach"
+    "titulo": "Calidad y sonido profesional",
+    "subtitulo": "Las mejores marcas a tu alcance"
   },
   {
     "imagen": "banner3.jpg",
-    "titulo": "Your passion for music starts here",
-    "subtitulo": "Explore our guitar catalog"
+    "titulo": "Tu pasión por la música empieza aquí",
+    "subtitulo": "Explora nuestro catálogo de guitarras"
   },
   {
     "imagen": "banner4.jpg",
-    "titulo": "Exclusive offers",
-    "subtitulo": "Special discounts on selected guitars"
+    "titulo": "Ofertas exclusivas",
+    "subtitulo": "Descuentos especiales en guitarras seleccionadas"
   }
 ]

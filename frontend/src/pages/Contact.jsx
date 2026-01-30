@@ -14,7 +14,7 @@ export default function Contact(){
             </div>
 
             <div className="contact-container">
-                <h2 className="section-title">Contacténos</h2>
+                <h2 className="section-title">Contáctenos</h2>
                 <form className="contact-form">
                     <div className="form-group">
                         <label htmlFor="nombre">Nombre:</label>
