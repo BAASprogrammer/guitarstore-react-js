@@ -1,0 +1,163 @@
+[
+    {
+      "id": 1,
+      "nombre": "Fender Stratocaster Standard",
+      "descripcion": "Guitarra eléctrica clásica con sonido brillante y versátil, ideal para rock, blues y pop.",
+      "imagen": "guitar1.jpg",
+      "precio": 899000,
+      "categoria": "Eléctrica"
+    },
+    {
+      "id": 2,
+      "nombre": "Gibson Les Paul Studio",
+      "descripcion": "Sonido potente y cálido con gran sustain, perfecta para rock y hard rock.",
+      "imagen": "guitar2.jpg",
+      "precio": 1299000,
+      "categoria": "Eléctrica"
+    },
+    {
+      "id": 3,
+      "nombre": "Ibanez RG Series",
+      "descripcion": "Guitarra eléctrica rápida y cómoda, diseñada para estilos modernos y metal.",
+      "imagen": "guitar3.jpg",
+      "precio": 749000,
+      "categoria": "Eléctrica"
+    },
+    {
+      "id": 4,
+      "nombre": "Yamaha Pacifica 112V",
+      "descripcion": "Excelente relación precio-calidad, ideal para principiantes y músicos intermedios.",
+      "imagen": "guitar3.jpg",
+      "precio": 399000,
+      "categoria": "Eléctrica"
+    },
+    {
+      "id": 5,
+      "nombre": "PRS SE Custom 24",
+      "descripcion": "Diseño elegante con gran equilibrio tonal y excelente comodidad.",
+      "imagen": "guitar5.jpg",
+      "precio": 999000,
+      "categoria": "Eléctrica"
+    },
+    {
+      "id": 6,
+      "nombre": "Jackson Dinky JS32",
+      "descripcion": "Guitarra agresiva con mástil rápido, perfecta para metal y hard rock.",
+      "imagen": "guitar6.jpg",
+      "precio": 459000,
+      "categoria": "Eléctrica"
+    },
+    {
+      "id": 7,
+      "nombre": "Epiphone Les Paul Standard",
+      "descripcion": "Clásico sonido Les Paul a un precio accesible, ideal para múltiples estilos.",
+      "imagen": "guitar7.jpg",
+      "precio": 699000,
+      "categoria": "Eléctrica"
+    },
+    {
+      "id": 8,
+      "nombre": "Squier Classic Vibe Stratocaster",
+      "descripcion": "Estilo vintage con sonido auténtico y excelente terminación.",
+      "imagen": "guitar1.jpg",
+      "precio": 529000,
+      "categoria": "Eléctrica"
+    },
+    {
+      "id": 9,
+      "nombre": "ESP LTD EC-256",
+      "descripcion": "Gran sustain y potencia, ideal para rock moderno y metal.",
+      "imagen": "guitar2.jpg",
+      "precio": 579000,
+      "categoria": "Eléctrica"
+    },
+    {
+      "id": 10,
+      "nombre": "Cort X100",
+      "descripcion": "Modelo liviano y cómodo, perfecto para /guitarristas que recién comienzan.",
+      "imagen": "guitar3.jpg",
+      "precio": 279000,
+      "categoria": "Eléctrica"
+    },
+    {
+      "id": 11,
+      "nombre": "Taylor Academy 10e",
+      "descripcion": "Guitarra electroacústica con sonido balanceado y excelente proyección.",
+      "imagen": "guitar5.jpg",
+      "precio": 899000,
+      "categoria": "Electroacústica"
+    },
+    {
+      "id": 12,
+      "nombre": "Martin D-X1E",
+      "descripcion": "Acústica de gran resonancia, ideal para escenario y estudio.",
+      "imagen": "guitar6.jpg",
+      "precio": 1099000,
+      "categoria": "Electroacústica"
+    },
+    {
+      "id": 13,
+      "nombre": "Takamine GD20",
+      "descripcion": "Guitarra acústica con sonido cálido y construcción sólida.",
+      "imagen": "guitar7.jpg",
+      "precio": 449000,
+      "categoria": "Acústica"
+    },
+    {
+      "id": 14,
+      "nombre": "Gretsch G2622 Streamliner",
+      "descripcion": "Semi-hollow con carácter vintage y gran definición sonora.",
+      "imagen": "guitar1.jpg",
+      "precio": 679000,
+      "categoria": "Semi-Hollow"
+    },
+    {
+      "id": 15,
+      "nombre": "Schecter Omen Extreme-6",
+      "descripcion": "Sonido moderno y potente con diseño llamativo.",
+      "imagen": "guitar2.jpg",
+      "precio": 629000,
+      "categoria": "Eléctrica"
+    },
+    {
+      "id": 16,
+      "nombre": "Washburn WD10S",
+      "descripcion": "Acústica confiable con excelente proyección y comodidad.",
+      "imagen": "guitar3.jpg",
+      "precio": 319000,
+      "categoria": "Acústica"
+    },
+    {
+      "id": 17,
+      "nombre": "Dean Vendetta XM",
+      "descripcion": "Guitarra eléctrica accesible con buen rendimiento general.",
+      "imagen": "guitar2.jpg",
+      "precio": 259000,
+      "categoria": "Eléctrica"
+    },
+    {
+      "id": 18,
+      "nombre": "Godin Session HT",
+      "descripcion": "Fabricación canadiense con sonido limpio y definición profesional.",
+      "imagen": "guitar1.jpg",
+      "precio": 1199000,
+      "categoria": "Eléctrica"
+    },
+    {
+      "id": 19,
+      "nombre": "Music Man Sterling Cutlass",
+      "descripcion": "Alta calidad de construcción y sonido moderno y versátil.",
+      "imagen": "guitar5.jpg",
+      "precio": 1399000,
+      "categoria": "Eléctrica"
+    },
+    {
+      "id": 20,
+      "nombre": "Fender Telecaster Player",
+      "descripcion": "Tono clásico con ataque definido, ideal para country, rock e indie.",
+      "imagen": "guitar7.jpg",
+      "precio": 949000,
+      "categoria": "Eléctrica"
+    }
+  ]
+  

@@ -1,0 +1,367 @@
+:root {
+/* Font Family */
+  --font-arimo: "Arimo", sans-serif;
+  --font-lato: "Lato", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+/* Font Weight */
+  --weight-thin: 100;
+  --weight-extra-light: 200;
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semi-bold: 600;
+  --weight-bold: 700;
+  --weight-extra-bold: 800;
+  --weight-black: 900;
+}
+
+body {
+	margin: 0;
+}
+/* Data Message (Home Loading) */
+.data-error-message {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-weight: 600;
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+/* End Data Message */
+
+/* Header */
+.header-container {
+	background-color: rgb(255, 255, 255);
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: .5rem 7rem;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+}
+
+.center, .grid-item div:nth-child(1) {
+	text-align: center;
+}
+
+.header-logo {
+	color: rgb(14, 14, 14);
+	width: fit-content;
+	display: inherit;
+}
+
+.header-logo h1{
+	font-size: 1.5rem;
+}
+
+.header-logo{
+	width: fit-content;
+	padding-right: 0.5rem;
+}
+
+.logo-container {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+.logo-guitar {
+	font-size: 1.8rem;
+}
+
+.logo-text {
+	background: linear-gradient(45deg, #ff6b35, #f7931e);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	font-weight: 700;
+}
+
+.sticky-menu{
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+/* End header */
+/* Header menu */ 
+.header-menu {
+	display: flex;
+	gap: 1.5rem;
+	justify-content: center;
+	align-items: center;
+	padding: 0 1rem;
+	margin-top: 1.3rem;
+}
+.header-menu .menu-link{
+	color: rgb(0, 0, 1, 0.7);
+	font-weight: var(--weight-semi-bold);
+	font-family: var(--font-arimo);
+	text-decoration: none;
+	font-size: 1.1rem;
+}
+.header-menu .menu-link:hover {
+	color: rgba(252, 95, 22, 0.863);
+	transition: color 0.1s ease; /* transición suave */
+}
+/* End header menu */
+.ppal-text {
+	font-style: italic;
+	font-size: 15pt;
+}
+
+.grid-item .flex {
+	align-items: center;
+}
+
+.grid-item .flex p:nth-child(1) {
+	padding: 1rem;
+}
+
+.grid-item .flex p:nth-child(2) {
+	margin: 0;
+}
+
+.menu-container.grid {
+	grid-template-columns: repeat(5, 1fr);
+	gap: 6rem;
+}
+.darkmode-shop {
+	width: fit-content;
+	display: flex;
+}
+/* Shoppingcart */
+.container-shoppingcart {
+	float: right;
+	width: 3rem;
+}
+
+.modal-shoppingcart {
+	width: 500px;
+	position: absolute;
+	right: 3rem;
+	background-color: rgba(255, 255, 255, 0.952);
+	display: none;
+	border-radius: 0.5rem;
+	padding: 1rem;
+	box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.container-shoppingcart:hover .modal-shoppingcart {
+	display: block;
+}
+
+.empty-shoppingcart{
+	width: 11rem;
+	height: auto;
+}
+
+.cursor-pointer, button {
+	cursor: pointer;
+}
+
+.button-shoppingcart{
+	background: none;
+	border: none;
+}
+
+.cart-badge {
+    position: absolute;
+    top: 0px;
+    background: rgba(252, 95, 22, 0.863);;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 1rem;
+    padding: 2px 6px;
+    min-width: 7px;
+    text-align: center;
+    z-index: 2;
+}
+
+.main-container{
+	padding: .5rem 7rem;
+}
+
+.modal-row {
+	grid-template-rows: 1fr;
+	grid-template-columns: 1.5fr 2fr 1.5fr 2fr;
+}
+
+.modal-row.header {
+	border-bottom: 1.5px solid #0807074d;
+	padding-bottom: 1rem;
+}
+
+.modal-row.footer {
+	grid-template-columns: 1fr;
+	border-top: 1.5px solid #0807074d;
+	padding-top: 1rem;
+}
+
+.menu-container{
+	margin: 3rem 0;
+}
+
+.foot .grid-item-modal{
+	font-weight: var(--weight-extra-bold);
+}
+
+.grid-item-modal {
+	padding: 0.5rem;
+}
+
+.grid-item-modal label{
+	font-size: clamp(0.8rem, 2vw, 1rem);/* para que se adapte a resol. móvil*/
+}
+
+.grid-item-modal input.quantity-cart, .grid-item-modal .add-del-cart{
+	font-size: 0.8rem;
+}
+
+.grid-item-modal img {
+	width: 50%;
+}
+
+.grid-item img {
+	border-radius: 1rem;
+	width: 230px;
+	height: 300px;
+}
+
+.add-cart-button {
+	width: 100%;
+	max-width: 400px;
+	padding: 0.5rem;
+	margin: 1rem 0;
+	background-color: orange;
+	color: white;
+	font-size: 13pt;
+	border: 1px solid rgb(248, 165, 11);
+	border-radius: 1rem;
+	font-weight: var(--weight-semi-bold);
+	font-family: var(--font-arimo);
+}
+
+.add-cart-button:hover {
+	background-color: rgb(199, 131, 6);
+	border: 1px solid rgb(185, 122, 5);
+}
+
+.product-value {
+	font-size: 25pt;
+	margin: 1.5rem 0;
+	color: rgb(233, 154, 8);
+}
+.product-value, .product-name, .our-collection {
+	font-weight: var(--weight-extra-bold);
+}
+
+.product-name {
+	font-size: 15pt;
+	min-height: 2rem;
+}
+
+.empty-cart-button {
+	background-color: #d18a06;
+	color: white;
+	font-size: 12pt;
+	border: 1px solid #e19e20;
+	border-radius: 1rem;
+	margin: auto;
+	width: 40%;
+	margin: 1rem;
+}
+
+.empty-cart-button:hover {
+	background-color: #c48104;
+	border: 1px solid #cc952d;
+}
+
+.add-del-cart {
+	color: white;
+	background-color: orange;
+	border: 1px solid rgb(248, 165, 11);
+	border-radius: 5px;
+	margin: 0.5rem;
+	width: 1.5rem;
+	font-weight: var(--weight-extra-bold);
+}
+
+.add-del-cart:hover {
+	background-color: #c48104;
+	border: 1px solid #cc952d;
+}
+
+.pay-cart-button{
+	background-color: rgb(182, 34, 8);
+	border: 1px solid rgb(187, 24, 24);
+	color: white;
+	font-size: 12pt;
+	border: 1px solid #e19e20;
+	border-radius: 1rem;
+	margin: auto;
+	width: 40%;
+	margin: 1rem;
+	cursor: not-allowed;
+}
+
+/* .pay-cart-button:hover {
+	background-color: rgb(236, 51, 18);
+	border: 1px solid rgb(206, 45, 16);
+} */
+
+.pay-message {
+	background: #bd0101;
+	width: 11rem;
+	border: 1px solid red;
+	border-radius: .5rem;
+	opacity: .8;
+	position: absolute;
+	left: 54.5%;
+	bottom: 70px;
+	height: 1.5rem;
+	font-weight: 600;
+}
+
+.quantity-cart{
+	width: 30px;
+	border-radius: 5px;
+	border: 1px solid gainsboro;
+	text-align: center;
+}
+/* End shoppingcart */
+
+.guitar-title {
+	font-size: 16pt;
+}
+
+button:disabled:hover{
+	background-color: orange;
+	border: 1px solid rgb(248, 165, 11);
+	cursor: not-allowed;
+}
+
+.product-data-container{
+	max-height: 18vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.product-description{
+	height: 6rem;
+}
+
+.signature-footer{
+	color: #ffffff4d;
+}
+
+.signature-footer p{
+	font-size: initial;
+	font-weight: var(--weight-medium);
+	opacity: 0.5;
+}

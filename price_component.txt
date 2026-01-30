@@ -1,0 +1,104 @@
+
+import React from 'react';
+
+const Price = ({ price, currencyCode = 'CLP', locale = 'es-CL' }) => {
+  // Formatea el precio según la configuración regional y la moneda
+  const formattedPrice = price.toLocaleString(locale, {
+    style: 'currency',
+    currency: currencyCode,
+    minimumFractionDigits: 2,  // Esto asegura que haya al menos 2 decimales
+    maximumFractionDigits: 2   // Esto asegura que no haya más de 2 decimales
+  });
+
+  return (
+    <div>
+      <h3>Price: {formattedPrice}</h3>
+    </div>
+  );
+};
+
+export default Price;
+
+import React, { useState, useEffect } from 'react';
+import Price from './Price';
+
+const App = () => {
+  const [price, setPrice] = useState(1234567.89);
+
+  useEffect(() => {
+    // Aquí podrías obtener el precio desde la base de datos
+    setPrice(1234567.89);
+  }, []);
+
+  return (
+    <div>
+      <h1>Precio del Producto en Chile</h1>
+      <Price price={price} currencyCode="CLP" locale="es-CL" />
+    </div>
+  );
+};
+
+export default App;
+
+import React, { useState, useEffect } from 'react';
+import Price from './Price';
+
+const App = () => {
+  const [price, setPrice] = useState(1500.75);
+
+  useEffect(() => {
+    // Aquí podrías obtener el precio desde la base de datos
+    setPrice(1500.75);
+  }, []);
+
+  return (
+    <div>
+      <h1>Product Price in USD</h1>
+      <Price price={price} currencyCode="USD" locale="en-US" />
+    </div>
+  );
+};
+
+export default App;
+
+import React, { useState, useEffect } from 'react';
+import Price from './Price';
+
+const App = () => {
+  const [price, setPrice] = useState(1200.50);
+
+  useEffect(() => {
+    // Aquí podrías obtener el precio desde la base de datos
+    setPrice(1200.50);
+  }, []);
+
+  return (
+    <div>
+      <h1>Produktpreis in EUR</h1>
+      <Price price={price} currencyCode="EUR" locale="de-DE" />
+    </div>
+  );
+};
+
+export default App;
+
+import React, { useState, useEffect } from 'react';
+import Price from './Price';
+
+const App = () => {
+  const [price, setPrice] = useState(1500);
+
+  useEffect(() => {
+    // Aquí podrías obtener el precio desde la base de datos
+    setPrice(1500);
+  }, []);
+
+  return (
+    <div>
+      <h1>商品の価格 (Product Price) in JPY</h1>
+      <Price price={price} currencyCode="JPY" locale="ja-JP" />
+    </div>
+  );
+};
+
+export default App;

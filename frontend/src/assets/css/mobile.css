@@ -1,0 +1,98 @@
+/* Archivo CSS para media query móvil */
+@media screen and (max-width:1366px) {
+	.menu-container.grid {
+		grid-template-columns: repeat(3, 1fr);
+		gap: clamp(1rem, 15vw, 12rem);
+	}
+}
+
+@media screen and (max-width:1024px) {
+	.menu-container.grid {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+	}
+}
+
+@media screen and (max-width:768px) {
+	.menu-container.grid {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.header-container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.modal-shoppingcart {
+		right: 7vw;
+	}
+    .ppal-text{
+        font-size: 1rem;
+    }
+    
+    .header-container{
+        padding: 0.5rem;
+    }
+
+    .flex{
+        flex-direction: column;
+    }
+
+    .header-img img{
+        width: 110px;
+    }
+
+    .modal-shoppingcart{
+        right: 2rem;
+    }
+
+    .modal-shoppingcart.data-shoppingcart{
+        width: 75%;
+    }
+
+    .mode-dark-light{
+        bottom: 20px;
+        left: 10px;
+    }
+    .mode-dark-light label{
+        height: 24px;
+    }
+
+    .slider-mode-screen::before{
+        height: 24px;
+    }
+
+    input:checked + .slider-mode-screen::before {
+        transform: translateX(33px);
+    }
+
+    .mode-dark-light{
+        bottom: 200px;
+    }
+
+    .grid-item-modal input.quantity-cart, .grid-item-modal .add-del-cart{
+        font-size: 0.7rem;
+    }
+
+    .grid-item-modal img{
+        width: 70%;
+    }
+    
+}
+
+@media screen and (max-width:423px) {
+    .pay-message{
+        left: 25%;
+    }
+}
+
+/* CSS modo claro - oscuro */
+
+@media (min-width: 768px) {
+    .mode-dark-light label {
+        width: 70px;
+        height: 25px;
+    }
+
+    .slider-mode-screen:before {
+        height: 25px;
+        width: 27px;
+    }
+}

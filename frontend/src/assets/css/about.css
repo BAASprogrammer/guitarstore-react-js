@@ -1,0 +1,26 @@
+.about-section {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.about-container{
+    padding: 0 4rem;
+}
+
+.social-icons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-icons a {
+  color: #333;
+  font-size: 2rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff6600; /* color al pasar el mouse */
+  transform: scale(1.2);
+}
