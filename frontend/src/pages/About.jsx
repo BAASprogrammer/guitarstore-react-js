@@ -5,7 +5,7 @@ export default function About() {
     return (
         <section id="about" className="about-section">
             <div className="about-container">
-                <h2 className="section-title">About Us</h2>
+                <h2 className="section-title">Sobre Nosotros</h2>
                 <p className="ppal-text about-text">                     
                     En Tienda de Guitarras, somos apasionados por la música y nos dedicamos a ofrecer las mejores guitarras y accesorios para músicos de todos los niveles. Nuestra misión es proporcionar productos de alta calidad a precios competitivos, junto con un servicio al cliente excepcional.
                 </p>
