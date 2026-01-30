@@ -7,14 +7,9 @@ import "../assets/css/slider.css";
 import banners from "../data/banners.json";
 
 export default function Home(){
-    // Importar dinámicamente las imágenes desde src/images/banners/
+    // Usar rutas absolutas para las imágenes
     const getImagePath = (imageName) => {
-        try {
-            return require(`../images/banners/${imageName}`).default || require(`../images/banners/${imageName}`);
-        } catch (e) {
-            console.warn(`Imagen no encontrada: ${imageName}`);
-            return "";
-        }
+        return `/images/banners/${imageName}`;
     };
 
     return(
