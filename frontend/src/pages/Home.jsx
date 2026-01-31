@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCertificate, faTruck, faShieldHalved } from "@fortawesome/free-solid-svg-icons";
 import Products from "./Products";
-import HomeGuitar from "../assets/images/inicio/guitar1.jpg"
+import HomeGuitar from "../assets/images/home/acoustic-guitar.jpg";
 import "../assets/css/home.css";
 
 export default function Home({ dato, cart, addCart }){

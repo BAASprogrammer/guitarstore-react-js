@@ -1,11 +1,24 @@
-/* Central CSS variables and utility classes
-   Moved from generalstyle.css and consolidated repeated color/spacing values.
-*/
 :root{
+  /* Fonts */
+  --font-arimo: "Arimo", sans-serif;
+  --font-lato: "Lato", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+
   /* Font weights */
-  --fw-800: 800;
-  --fw-600: 600;
-  --fw-500: 500;
+  --weight-thin: 100;
+  --weight-extra-light: 200;
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semi-bold: 600;
+  --weight-bold: 700;
+  --weight-extra-bold: 800;
+  --weight-black: 900;
+
+  /* Compatibility aliases (refer to canonical weight variables) */
+  --fw-500: var(--weight-medium);
+  --fw-600: var(--weight-semi-bold);
+  --fw-800: var(--weight-extra-bold);
 
   /* Spacing */
   --gap-2: 1rem;
@@ -17,49 +30,46 @@
 
   /* App colors */
   --black: rgba(0,0,0,1);
-  --white: rgba(255,255,255,1);
   --text-95: rgba(245, 245, 245, 0.918);
+  --white: rgba(255,255,255,1);
 
   /* Accent / Brand */
+  --accent-gold: rgba(196,129,4,1);
+  --accent-gold-border: rgba(204,149,45,1);
   --accent-orange: rgba(252,95,22,1); /* rgb(252,95,22) */
   --accent-orange-opaque: rgba(252, 95, 22, 0.863);
 
   /* Project-wide colors */
+  --bg-light: rgba(248,249,250,1);
+  --bg-offwhite: rgba(249,249,249,1);
+  --border-dark-30: rgba(8,7,7,0.302);
+  --border-light: rgba(204,204,204,1);
+  --danger: rgba(189,1,1,1);
+  --muted-white: rgba(255,255,255,0.302);
+  --overlay-white-02: rgba(255,255,255,0.02);
   --primary-color: rgba(255,126,0,1);
   --primary-strong: rgba(255,102,0,1);
   --text-dark: rgba(51,51,51,1);
-  --bg-light: rgba(248,249,250,1);
-  --bg-offwhite: rgba(249,249,249,1);
-  --panel-bg: rgba(255,255,255,0.952);
-  --muted-white: rgba(255,255,255,0.302);
-  --overlay-white-02: rgba(255,255,255,0.02);
-  --border-light: rgba(204,204,204,1);
-  --border-dark-30: rgba(8,7,7,0.302);
-  --accent-gold: rgba(196,129,4,1);
-  --accent-gold-border: rgba(204,149,45,1);
-  --danger: rgba(189,1,1,1);
 
   /* Add-to-cart */
   --add-cart-bg: rgba(202,133,3,1);
   --add-cart-border: rgba(233,155,10,1);
-  --add-cart-hover: rgba(222,149,20,1); /* hover: lighter for better visibility */
   --add-cart-border-hover: rgba(156,104,5,1); /* rgb(156,104,5) */
+  --add-cart-hover: rgba(222,149,20,1); /* hover: lighter for better visibility */
 
   /* Logo gradient (defaults) */
-  --logo-grad-start: rgba(255,140,66,1);
   --logo-grad-end: rgba(255,179,71,1);
+  --logo-grad-start: rgba(255,140,66,1);
 
   /* Backgrounds & inputs */
-  --bg-modal-dark: rgba(80,80,80,1);
   --bg-contact-dark: rgba(51,51,51,1);
   --bg-input-dark: rgba(85,85,85,1);
+  --bg-modal-dark: rgba(80,80,80,1);
   --border-input-dark: rgba(119,119,119,1);
 
-  --shadow-white-10: 0 0 10px rgba(255,255,255,0.1);
-
   /* Light-theme variations */
-  --empty-cart-hover: rgba(238,157,5,1);
   --empty-cart-border: rgba(226,163,46,1);
+  --empty-cart-hover: rgba(238,157,5,1);
   --pay-cart-bg: rgba(216,46,16,1);
   --pay-cart-border: rgba(192,41,15,1);
 
@@ -71,11 +81,14 @@
   --app-link: rgba(97,218,251,1);
 
   /* Dots / decorative gradients */
-  --dot-gradient-start: rgba(255,179,71,1);
-  --dot-gradient-end: rgba(255,126,0,1);
+  --dot-gradient-end: var(--primary-color);
+  --dot-gradient-start: var(--logo-grad-end);
 
   /* Icon shadow */
   --sun-shadow-color: rgba(255,230,7,1);
+
+  /* Shadows */
+  --shadow-white-10: 0 0 10px rgba(255,255,255,0.1);
 }
 
 /* Theme tweaks */
@@ -94,25 +107,22 @@
 }
 
 /* Utility classes using variables */
-.font-weight-800 { font-weight: var(--fw-800); }
-.font-weight-600 { font-weight: var(--fw-600); }
-.font-weight-500 { font-weight: var(--fw-500); }
 
-/* TEXT ALIGNMENT */
-.right { text-align: right; }
-.left { text-align: left; }
-.center { text-align: center; }
+/* FONT WEIGHT */
+.font-weight-500 { font-weight: var(--weight-medium); }
+.font-weight-600 { font-weight: var(--weight-semi-bold); }
+.font-weight-800 { font-weight: var(--weight-extra-bold); }
 
 /* DISPLAY */
-.grid { display: grid; }
 .flex { display: flex; }
 .flex-column { display: flex; flex-direction: column; }
 .flex-wrap { display: flex; flex-wrap: wrap; }
+.grid { display: grid; }
 
 /* FLEXBOX ALIGNMENT */
-.justify-center { justify-content: center; }
-.justify-between { justify-content: space-between; }
 .align-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
 
 /* GAPS */
 .gap-2 { gap: var(--gap-2); }
@@ -124,6 +134,11 @@
 .position-relative { position: relative; }
 .z-index-1 { z-index: var(--z-1); }
 .z-index-10 { z-index: var(--z-10); }
+
+/* TEXT ALIGNMENT */
+.center { text-align: center; }
+.left { text-align: left; }
+.right { text-align: right; }
 
 /* CURSOR */
 .pointer { cursor: pointer; }

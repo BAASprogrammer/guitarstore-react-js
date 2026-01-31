@@ -1,6 +1,7 @@
 /* Footer styles */
 .signature-footer{
 	color: var(--muted-white);
+	margin-top: 3rem;
 }
 
 .signature-footer p{
