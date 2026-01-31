@@ -10,17 +10,17 @@
 @keyframes sun-moon {
     0% {
         opacity: 1;
-        filter: brightness(1) drop-shadow(0 0 6px #ffe607);
+        filter: brightness(1) drop-shadow(0 0 6px var(--sun-shadow-color));
         transform: scale(1) rotate(0deg);
     }
     50% {
         opacity: 0.5;
-        filter: brightness(1.2) drop-shadow(0 0 12px #ffe607);
+        filter: brightness(1.2) drop-shadow(0 0 12px var(--sun-shadow-color));
         transform: scale(1.2) rotate(20deg);
     }
     100% {
         opacity: 1;
-        filter: brightness(1.1) drop-shadow(0 0 8px #ffe607);
+        filter: brightness(1.1) drop-shadow(0 0 8px var(--sun-shadow-color));
         transform: scale(1) rotate(0deg);
     }
 }
@@ -51,73 +51,73 @@
 
 /* Dark theme */
 .dark-theme{
-    background-color: black;
-    color: white;
-}
+    background-color: var(--black);
+    color: var(--white);
+} 
 
 .dark-theme .modal-shoppingcart{
-    background-color: #505050;
-    color: rgba(245, 245, 245, 0.918);
-}
+    background-color: var(--bg-modal-dark);
+    color: var(--text-95);
+} 
 
 .dark-theme .add-cart-button {
-	background-color: rgb(202, 133, 3);
-	color: white;
-	border: 1px solid rgb(233, 155, 10);
-}
+	background-color: var(--add-cart-bg);
+	color: var(--white);
+	border: 1px solid var(--add-cart-border);
+} 
 
 .dark-theme .add-cart-button:hover {
-	background-color: rgb(209, 139, 8);
-	border: 1px solid rgb(156, 104, 5);
-}
+	background-color: var(--add-cart-hover);
+	border: 1px solid var(--add-cart-border-hover);
+} 
 
 .dark-theme .logo-text {
-	background: linear-gradient(45deg, #ff8c42, #ffb347);
+	background: linear-gradient(45deg, var(--logo-grad-start), var(--logo-grad-end));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
-}
+} 
 
 .light-theme .logo-text {
-	background: linear-gradient(45deg, #ff6b35, #f7931e);
+	background: linear-gradient(45deg, var(--logo-grad-start), var(--logo-grad-end));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
-}
+} 
 
 .dark-theme .contact-section{
-    background-color: #333333;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);		
-    color: white;
-}
+    background-color: var(--bg-contact-dark);
+    box-shadow: var(--shadow-white-10);
+    color: var(--white);
+} 
 
 .dark-theme .section-title {
-    color: rgba(252, 95, 22, 0.863);
-}
+    color: var(--accent-orange-opaque);
+} 
 
 .dark-theme .form-group input,
 .dark-theme .form-group textarea{
-    background-color: #555555;
-    color: white;
-    border: 1.5px solid #777777;
+    background-color: var(--bg-input-dark);
+    color: var(--white);
+    border: 1.5px solid var(--border-input-dark);
 } 
 
 .dark-theme .submit-button{
-    background-color: rgba(252, 95, 22, 0.863);
-    color: white;
+    background-color: var(--accent-orange-opaque);
+    color: var(--white);
 }
 
 .dark-theme .submit-button:hover{
-    background-color: rgba(252, 95, 22, 1);
-}
+    background-color: var(--accent-orange);
+} 
 
 .dark-theme .form-group label{
-    color: white;
+    color: var(--white);
     font-weight: bold;
 }
 .dark-theme .data-error-message{
-    color: aliceblue;
-}
+    color: var(--data-error-color);
+} 
 
 /* Asegura que los product-containers hereden fondo y color del tema */
 .dark-theme .product-container,
@@ -143,45 +143,30 @@
 
 /* Light theme */
 .light-theme{
-    background-color: white;
-    color: black;
+    background-color: var(--white);
+    color: var(--black);
 }
 
 .light-theme .signature-footer{
-	color: rgb(0, 0, 0);
+	color: var(--black);
 }
 
 .light-theme .pay-message {
-    color: white;
+    color: var(--white);
 }
 
 .light-theme .empty-cart-button:hover {
-	background-color: #ee9d05;
-	border: 1px solid #e2a32e;
+	background-color: var(--empty-cart-hover);
+	border: 1px solid var(--empty-cart-border);
 }
 
 .light-theme .pay-cart-button {
-	background-color: rgb(216, 46, 16);
-	border: 1px solid rgb(192, 41, 15);
+	background-color: var(--pay-cart-bg);
+	border: 1px solid var(--pay-cart-border);
 }
 
 .light-theme .data-error-message{
-    color: #333333;
-}
+    color: var(--bg-contact-dark);
+} 
 
-/* Dot gradient variables para ambos temas */
-:root{
-  --dot-gradient-start: #ffb347;
-  --dot-gradient-end: #ff7e00;
-}
-
-/* Asegura valores distintos/ajustados para dark / light si quieres */
-.light-theme {
-  --dot-gradient-start: #ffd69a;
-  --dot-gradient-end: #ff8a1a;
-}
-
-.dark-theme {
-  --dot-gradient-start: #ffb347;
-  --dot-gradient-end: #ff7e00;
-}
+ 

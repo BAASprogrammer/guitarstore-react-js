@@ -7,9 +7,9 @@ import ColorProvider, { useColor } from "./contexts/ColorProvider";
 import guitars from './data/guitars.json'; 
 
 import "./assets/css/fonts.css";
-import "./assets/css/generalstyle.css";
+import "./assets/css/variables.css";
 import "./assets/css/index.css";
-import "./assets/css/mobile.css";
+import "./assets/css/mobile.css"; 
 
 import loadingGif from './assets/images/loading.gif';
 

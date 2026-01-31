@@ -73,12 +73,12 @@ body {
 }
 
 .logo-text {
-	background: linear-gradient(45deg, #ff6b35, #f7931e);
+	background: linear-gradient(45deg, var(--logo-grad-start), var(--logo-grad-end));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	font-weight: 700;
-}
+} 
 
 .sticky-menu{
 	position: sticky;
@@ -103,9 +103,9 @@ body {
 	font-size: 1.1rem;
 }
 .header-menu .menu-link:hover {
-	color: rgba(252, 95, 22, 0.863);
+	color: var(--accent-orange-opaque);
 	transition: color 0.1s ease; /* transición suave */
-}
+} 
 /* End header menu */
 .ppal-text {
 	font-style: italic;
@@ -172,8 +172,8 @@ body {
 .cart-badge {
     position: absolute;
     top: 0px;
-    background: rgba(252, 95, 22, 0.863);;
-    color: #fff;
+    background: var(--accent-orange-opaque);
+    color: var(--white);
     font-size: 0.8rem;
     font-weight: bold;
     border-radius: 1rem;

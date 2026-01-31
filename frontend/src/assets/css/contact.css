@@ -14,7 +14,7 @@
 }
 
 .section-title {
-	color: rgba(252, 95, 22, 0.863);
+	color: var(--accent-orange-opaque);
 }
 
 .form-group label{
@@ -33,8 +33,8 @@
 }
 
 .submit-button{
-	background-color: rgba(252, 95, 22, 0.863);
-	color: white;
+	background-color: var(--accent-orange-opaque);
+	color: var(--white);
 	border: none;
 	padding: 0.75rem 1.5rem;
 	border-radius: 5px;
@@ -46,7 +46,7 @@
 }
 
 .submit-button:hover{
-	background-color: rgba(252, 95, 22, 1);
+	background-color: var(--accent-orange);
 }
 
 /* Keep content above animated dots */
