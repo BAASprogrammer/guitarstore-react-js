@@ -89,7 +89,7 @@
     color: var(--white);
 }
 
-.dark-theme .welcome-txt {
+.dark-theme .welcome-txt, .dark-theme .wcu-item-description {
     color: rgba(217, 232, 245, 0.8);
 }
 
