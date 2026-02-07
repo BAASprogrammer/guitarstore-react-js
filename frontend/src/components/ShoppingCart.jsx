@@ -3,6 +3,12 @@ import { useEffect, useState } from 'react';
 export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     const [cantidad, setCantidad] = useState({})
     const [message,setMessage] = useState(false)
+    const [isOpenCart, setIsOpenCart] = useState(false)
+
+    const handleCart = () => {
+        setIsOpenCart(!isOpenCart);
+    }
+    console.log(isOpenCart);
     
     
     useEffect(() => {
@@ -71,9 +77,6 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
         setMessage(false); // Cambia 'message' a false cuando el mouse sale del botón
     }
 
-    const handlePayCart = () => {
-    }
-    
     // Calcular total de items en carrito
     const totalCount = dataCart.reduce((acc, item) => acc + (Number(cantidad[item.id]) || 1), 0);
 
@@ -85,7 +88,7 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     return(<div className="right shoppingcart">
                 <div className="container-shoppingcart center">
                     <button className='button-shoppingcart' title='Carrito de compras'>
-                        <img className="header-img pointer img-shoppingcart" src={require('../assets/images/header/carro.png')} alt="Carrito" width={20}></img>
+                        <img className="header-img pointer img-shoppingcart" src={require('../assets/images/header/carro.png')} alt="Carrito" width={20} onClick={handleCart}></img>
                     {/* Badge con cantidad */}
                     {totalCount > 0 && (
                         <span className="cart-badge" aria-live="polite" title={`${totalCount} producto(s) en carrito`}>
@@ -94,7 +97,8 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
                     )}
                     </button>
                     {dataCart.length !== 0 ? (
-                    <div className="modal-shoppingcart data-shoppingcart right">
+                    <div className={`modal-shoppingcart ${isOpenCart ? 'data-shoppingcart' : 'closed-shoppingcart'} right`}>
+                        <span className='close-shopping-cart' onClick={handleCart}>x</span>
                         <div className="status-shoppingcart center">
                             <h3>Productos <span>Carro</span></h3>
                         </div>
@@ -130,7 +134,7 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
                                                 {dataCart.length !== 0 &&(
                                                     <div>
                                                         <button className="grid-item-modal center empty-cart-button" title='Vaciar productos del carro de compras' onClick={()=>emptyCart()}>Vaciar carrito</button>
-                                                        <button className="grid-item-modal center pay-cart-button" title='Realizar pago de los productos' onMouseOver={handleMouseOverPayCart} onMouseOut={handleMouseOutPayCart} onClick={()=>handlePayCart()}>Pagar</button>
+                                                        <button className="grid-item-modal center pay-cart-button" title='Realizar pago de los productos' onMouseOver={handleMouseOverPayCart} onMouseOut={handleMouseOutPayCart}>Pagar</button>
                                                     </div>
                                                 )}
                                                 {message && ( <div className='pay-message'>Función no disponible</div>)}
@@ -142,7 +146,8 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
                         </div>
                     </div>
                     ) : (
-                        <div className="modal-shoppingcart status-shoppingcart empty-shoppingcart center">
+                        <div className={`modal-shoppingcart status-shoppingcart empty-shoppingcart center ${!isOpenCart ? 'data-shoppingcart' : ''}`}>
+                            <span className='close-shopping-cart' onClick={handleCart}>x</span>
                             <h3>El carrito está vacío</h3>
                         </div>
                     )}

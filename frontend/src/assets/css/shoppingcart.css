@@ -12,8 +12,11 @@
 	color: var(--text-dark);
 }
 
-.container-shoppingcart:hover .modal-shoppingcart {
+.data-shoppingcart {
 	display: block;
+}
+.closed-shoppingcart {
+	display: none;
 }
 
 .empty-shoppingcart{
@@ -187,6 +190,16 @@ button:disabled:hover{
 
 .grid-item-modal input.quantity-cart, .grid-item-modal .add-del-cart{
 	font-size: 0.8rem;
+}
+.close-shopping-cart{
+	position: absolute;
+	top: 5px;
+	right: 15px;
+	font-size: 1rem;
+	font-weight: var(--weight-bold);
+	color: var(--text-dark)!important;
+	cursor: pointer;
+	transition: all 0.3s ease;
 }
 /* Animations */
 @keyframes shoppingcart-hover {
