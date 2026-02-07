@@ -57,7 +57,7 @@
 
 /* Header & Logo */
 .dark-theme .modal-shoppingcart {
-    background-color: var(--bg-modal-dark);
+    background-color: rgba(30, 30, 35, 0.98);
     color: var(--text-95);
 }
 

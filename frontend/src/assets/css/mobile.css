@@ -66,14 +66,9 @@
         width: 110px;
     }
 
-	/* Shopping Cart Position */
-    .modal-shoppingcart{
-        right: 2rem;
-    }
-
 	/* Shopping Cart Modal */
     .modal-shoppingcart.data-shoppingcart{
-        width: 75%;
+        width: fit-content;
     }
 
     .welcome-title{
