@@ -54,6 +54,11 @@
         left: 4rem;
         top: auto;
     }
+    .empty-cart-button, .pay-cart-button{
+        width: 70%;
+        font-size: 0.9rem;
+    }
+
 	
 	/* Text */
     .ppal-text{
