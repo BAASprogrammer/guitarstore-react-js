@@ -58,6 +58,8 @@
 
 .category{
 	position: absolute;
+	top: 0.5rem;
+	left: 0.5rem;
 	background-color: var(--primary-color);
 	color: var(--white);
 	padding: 0.2rem 0.5rem;
@@ -65,7 +67,6 @@
 	font-size: 0.8rem;
 	font-weight: var(--weight-semi-bold);
 	width: 3rem;
-	transform: translate(-80%, -30%);
 }
 .category:hover {
 	animation: alternate 0.5s ease-in-out category-hover;
@@ -101,13 +102,13 @@
 /* Category Animation */
 @keyframes category-hover {
 	0% {
-		transform: translate(-80%, -30%) translateY(0);
+		transform: translateY(0);
 	}
 	50% {
-		transform: translate(-80%, -30%) translateY(-5px);
+		transform: translateY(-5px);
 	}
 	100% {
-		transform: translate(-80%, -30%) translateY(0);
+		transform: translateY(0);
 	}
 }
 
