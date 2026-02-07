@@ -20,7 +20,7 @@ export default function Approutes({dato, addCart, cart}){
             <Route path="/products" element={<Products
                 dato = {dato}
                 cart = {cart}
-                addCart = {addCart} //se traspasa función para agregar a carro de compra utilizado en main.jsx
+                addCart = {addCart} // passes function to add to shopping cart used in main.jsx
             />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

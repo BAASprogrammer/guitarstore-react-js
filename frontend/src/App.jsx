@@ -24,7 +24,7 @@ function AppContent({ dato, cart, addCart, deleteCart, emptyCart, error, cargand
   if (cargando) {
     return (
       <div className="loading-wrapper">
-        <img src={loadingGif} alt="Cargando..." style={{ width: 50 }} />
+        <img src={loadingGif} alt="Loading..." style={{ width: 50 }} />
       </div>
     );
   }
@@ -63,7 +63,7 @@ export default function App() {
       setDato(guitars);
       setCargando(false);
     } catch (error) {
-      console.error('Error al cargar datos:', error);
+      console.error('Error loading data:', error);
       setError(error);
       setCargando(false);
     }

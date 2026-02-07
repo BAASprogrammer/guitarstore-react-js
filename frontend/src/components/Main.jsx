@@ -6,7 +6,7 @@ export default function Main({dato, addCart, cart}){
             <Approutes
                 dato = {dato}
                 cart = {cart}
-                addCart = {addCart} //se traspasa función para agregar a carro de compra utilizado en main.jsx
+                addCart = {addCart} // passes function to add to shopping cart used in main.jsx
             />
         </main>
     )

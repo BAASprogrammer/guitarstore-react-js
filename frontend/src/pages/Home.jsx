@@ -16,7 +16,7 @@ export default function Home({ dato, cart, addCart }){
   }, []);
   return(
     <section id="index" className="index-section">
-      {/* Decorative animated orange dots (no interactúan, aria-hidden) */}
+      {/* Decorative animated guitar dots (non-interactive, aria-hidden) */}
       <div className="guitar-dot-bg" aria-hidden>
         <span className="guitar-dot guitar-dot--1"><FontAwesomeIcon className="guitar-icon" icon={faGuitar} style={{transform: 'rotate(-15deg)'}} /></span>
         <span className="guitar-dot guitar-dot--2">

@@ -3,7 +3,7 @@ import "../assets/css/contact.css";
 export default function Contact(){
     return(
         <section id="contact" className="contact-section position-relative">
-            {/* Decorative animated orange dots (no interactúan, aria-hidden) */}
+            {/* Decorative animated dots (non-interactive, aria-hidden) */}
             <div className="dots-bg z-index-1" aria-hidden>
                 <span className="dot dot--1"></span>
                 <span className="dot dot--2"></span>
