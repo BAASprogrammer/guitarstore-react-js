@@ -1,7 +1,7 @@
 /* Product and cart item styles */
 .collection-txt{
 	color: var(--primary-color);
-	background: linear-gradient(135deg, var(--primary-strong) 0%, var(--primary-color) 50%, var(--logo-grad-end) 100%);
+	background: var(--primary-color);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;

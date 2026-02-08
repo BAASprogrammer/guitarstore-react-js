@@ -96,7 +96,7 @@
 
 .view-products, .why-us{
   margin-top: 1rem;
-  background: linear-gradient(135deg, var(--primary-strong) 0%, var(--primary-color) 100%);
+  background: var(--primary-color);
   box-shadow: var(--shadow-md);
   color: var(--white);
   border: none;
@@ -111,7 +111,8 @@
 }
 
 .view-products:hover, .why-us:hover{
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--logo-grad-end) 100%);
+  background: var(--primary-color);
+  opacity: 0.85;
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(255, 126, 0, 0.35);
 }
