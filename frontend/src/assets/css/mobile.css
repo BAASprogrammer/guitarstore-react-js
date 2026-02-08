@@ -20,6 +20,10 @@
 		grid-template-columns: repeat(3, 1fr);
 		gap: 2rem;
 	}
+    /* Contact */
+    .contact-section{
+        width: 90%;
+    }
 }
 
 /* Tablets & Mobile */
@@ -173,10 +177,6 @@
     .button-home-container{
         flex-wrap: wrap;
     }
-    .contact-section{
-        width: 90%;
-    }
-    
 }
 
 /* Mobile Small */

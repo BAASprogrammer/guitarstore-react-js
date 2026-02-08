@@ -31,7 +31,7 @@ function AppContent({ dato, cart, addCart, deleteCart, emptyCart, error, cargand
   return (
     <div className={isDarkTheme ? 'dark-theme' : 'light-theme'}>
       {error ? (
-       <div className='data-error-message'>{error.message}</div>
+       <div className='data-error-message center'>{error.message}</div>
       ) : (
         <div>
           <Header

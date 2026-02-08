@@ -72,19 +72,19 @@ export default function Contact(){
                     <div className="form-group">
                         <label htmlFor="nombre">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" value={formData.nombre} onChange={handleChange} />
-                        {error.nombre && <p className="error-message">{error.nombre}</p>}
+                        {error.nombre && <p className="error-message center">{error.nombre}</p>}
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email:</label>
                         <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} />
-                        {error.email && <p className="error-message">{error.email}</p>}
+                        {error.email && <p className="error-message center">{error.email}</p>}
                     </div>
                     <div className="form-group">
                         <label htmlFor="mensaje">Mensaje:</label>
                         <textarea id="mensaje" name="mensaje" rows="4" value={formData.mensaje} onChange={handleChange}></textarea>
-                        {error.mensaje && <p className="error-message">{error.mensaje}</p>}
+                        {error.mensaje && <p className="error-message center">{error.mensaje}</p>}
                     </div>
-                    <div>{error.general && <p className="error-message">{error.general}</p>}</div>
+                    <div>{error.general && <p className="error-message center">{error.general}</p>}</div>
                     <button type="submit" className="submit-button">Enviar</button>
                 </form>
             </div>

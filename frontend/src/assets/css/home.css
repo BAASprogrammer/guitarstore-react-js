@@ -94,7 +94,6 @@
 }
 
 .home-products-section h1 {
-	text-align: center;
 	margin-bottom: 2rem;
 	color: var(--text-dark);
 }
@@ -137,7 +136,6 @@
 }
 
 .why-choose-us-title {
-  text-align: center;
   font-size: 2.5rem;
   color: var(--text-dark);
 }
@@ -161,7 +159,6 @@
   border: 2px solid var(--border-light);
   border-radius: var(--br-lg);
   box-shadow: var(--shadow-sm);
-  text-align: center;
   padding: 2rem;
   width: 20%;
   height: 10rem;

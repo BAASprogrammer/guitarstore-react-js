@@ -61,20 +61,20 @@ export default function Home({ dato, cart, addCart }){
       </div>
       <div className="why-choose-us">
         <div>
-          <div className="why-choose-us-title font-weight-600">¿Por qué <span className="why-choose-us-title-end">elegirnos</span>?</div>
+          <div className="why-choose-us-title center font-weight-600">¿Por qué <span className="why-choose-us-title-end">elegirnos</span>?</div>
         </div>
         <div className="why-choose-us-grid flex flex-wrap">
-          <div className="why-choose-us-item">
+          <div className="why-choose-us-item center">
             <FontAwesomeIcon icon={faCertificate} size="2x" className="wcu-icon" />
             <div className="wcu-item-title font-weight-600">Calidad Garantizada</div>
             <p className="wcu-item-description">Trabajamos con las mejores marcas</p>
           </div>
-          <div className="why-choose-us-item">
+          <div className="why-choose-us-item center">
             <FontAwesomeIcon icon={faTruck} size="2x" className="wcu-icon" />
             <div className="wcu-item-title font-weight-600">Envío Gratis</div>
             <p className="wcu-item-description">Envío gratis en todo el país</p>
           </div>
-          <div className="why-choose-us-item">
+          <div className="why-choose-us-item center">
             <FontAwesomeIcon icon={faShieldHalved} size="2x" className="wcu-icon" />
             <div className="wcu-item-title font-weight-600">Garantía Extendida</div>
             <p className="wcu-item-description">2 años en todos nuestros productos</p>
