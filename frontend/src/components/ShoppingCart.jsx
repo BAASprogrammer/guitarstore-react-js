@@ -2,12 +2,16 @@ import { useEffect, useState } from 'react';
 import useCurrency from '../hooks/useCurrency';
 import ConfirmModal from './ConfirmModal';
 import dataMessage from '../constants/messages';
+import { getModalConfigs } from '../constants/cartModals';
+
+const MAX_QUANTITY = 10;
 
 export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     const [cantidad, setCantidad] = useState({})
     const [message,setMessage] = useState({})
     const [isOpenCart, setIsOpenCart] = useState(false)
     const [confirmDelete, setConfirmDelete] = useState(null)
+
     const formatCurrency = useCurrency()
     /* Logic to open and close the shopping cart modal */
     const handleCart = () => {
@@ -15,8 +19,7 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     }
     /* Logic to empty the shopping cart and close the modal */
     const handleEmptyCart = () => {
-        emptyCart();
-        setIsOpenCart(false);
+        setMessage({ type: "emptyCart" });
     }
     
     /* Logic to update the quantity of products in the shopping cart when dataCart changes */
@@ -37,6 +40,7 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
         })
     }, [dataCart]);
 
+
     // Decrease the quantity of a product added to the shopping cart
     const deleteProduct = (idproducto) => {
         setCantidad((prevcantidad) =>{
@@ -54,8 +58,9 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     const addProduct = (idproducto) => {
         setCantidad((prevcantidad)=>{
             const newcantidad = {...prevcantidad}
-            if (newcantidad[idproducto] >= 10) {
-                setMessage({ type: "max" });
+            if (newcantidad[idproducto] >= MAX_QUANTITY) {
+                const productName = dataCart.find(item => String(item.id) === String(idproducto))?.nombre || 'Producto';
+                setMessage({ type: "max", productName });
                 return prevcantidad; // Don't increase
             } else {
                 newcantidad[idproducto] = (newcantidad[idproducto] || 0) + 1;
@@ -66,19 +71,25 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
     // Logic that executes when the input value changes
     const handleChange = (event, id) =>{
         let eventvalue = /^0+$/.test(event.target.value) || event.target.value === "" ? 0 : parseInt(event.target.value)
-        const newcantidad = {...cantidad, [id]: eventvalue}
-        if (newcantidad[id] === 0) {
-            newcantidad[id] = 1
+        const newcantidad = {...cantidad}
+        if (eventvalue > MAX_QUANTITY) {
+            const productName = dataCart.find(item => String(item.id) === String(id))?.nombre || 'Producto';
+            setMessage({ type: "max", productName });
+            newcantidad[id] = MAX_QUANTITY;
+        } else if (eventvalue === 0) {
+            newcantidad[id] = 1;
+        } else {
+            newcantidad[id] = eventvalue;
         }
         setCantidad(newcantidad)
-        // no return necessary because we don't need to return any value to use
-        // return newcantidad
     }
 
     // Logic to handle mouseover and mouseout events
 
     const handleMouseOverPayCart = () => {
-        setMessage({ type: "pay" }); // Changes 'message' to indicate pay message
+        if (!message.type) {
+            setMessage({ type: "pay" }); // Changes 'message' to indicate pay message only if no other modal is open
+        }
     }
 
     const handleMouseOutPayCart = () => { 
@@ -94,6 +105,7 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
         });
         setConfirmDelete(null);
         setMessage({ type: "delete" }); // Show success message
+        setIsOpenCart(false); // Close the shopping cart after deletion
     }
 
     const cancelDeleteProduct = () => {
@@ -106,39 +118,24 @@ export default function ShoppingCart({dataCart,deleteCart, emptyCart}){
 
     // Helper: formats the badge (shows "999+" if > 999)
     const formatBadgeCount = (count) => {
-        return count > 999 ? '999+' : count;
+        if (count > 999) {
+            return '999+';
+        }
+        return count;
     };
 
+    // Modal configurations
+    const modalConfigs = getModalConfigs(dataMessage, MAX_QUANTITY, message, cancelDeleteProduct, confirmDeleteProduct, setMessage, emptyCart, setIsOpenCart);
+
     return(<div className="right shoppingcart">
-                {isOpenCart && <div className='overlay-shopping-cart' onClick={handleCart}></div>}
-                <ConfirmModal
-                    key="todelete"
-                    isOpen={message.type === "todelete"}
-                    message={dataMessage.todelete.message}
-                    onConfirm={confirmDeleteProduct}
-                    onCancel={cancelDeleteProduct}
-                    showCloseButton={true}
-                    title={dataMessage.todelete.title}
-                    closeOnOverlay={false}
-                />
-                <ConfirmModal
-                    key="delete"
-                    isOpen={message.type === "delete"}
-                    message={dataMessage.delete.message}
-                    showButtons={false}
-                    onCancel={cancelDeleteProduct}
-                    title={dataMessage.delete.title}
-                />
-                <ConfirmModal
-                    key="max"
-                    isOpen={message.type === "max"}
-                    message={dataMessage.max.message}
-                    showButtons={false}
-                    onCancel={cancelDeleteProduct}
-                    showCloseButton={true}
-                    title={dataMessage.max.title}                    
-                    closeOnOverlay={false}   
-                />
+                {isOpenCart && <div className='overlay-shopping-cart' onClick={message.type ? () => {} : handleCart}></div>}
+                {modalConfigs.map(config => (
+                    <ConfirmModal
+                        key={config.key}
+                        isOpen={message.type === config.type}
+                        {...config}
+                    />
+                ))}
                 <div className="container-shoppingcart center">
                     <button className='button-shoppingcart' title='Carrito de compras'>
                         <img className="header-img pointer img-shoppingcart" src={require('../assets/images/header/carro.png')} alt="Carrito" width={20} onClick={handleCart}></img>

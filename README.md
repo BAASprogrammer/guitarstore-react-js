@@ -118,7 +118,8 @@ frontend/
 │   ├── hooks/
 │   │   └── useCurrency.js # Hook personalizado para formateo de moneda CLP
 │   ├── constants/
-│   │   └── messages.js    # Mensajes centralizados para modales y notificaciones
+│   │   ├── messages.js    # Mensajes centralizados para modales y notificaciones
+│   │   └── cartModals.js  # Configuraciones de modales reutilizables
 │   ├── data/
 │   │   └── guitars.json   # Datos de productos estáticos
 │   └── App.jsx            # Componente principal y ruteo
@@ -151,9 +152,9 @@ frontend/
 
 ### **Sistema de Carrito Inteligente**
 - **Límites de Cantidad**: Máximo 10 unidades por producto con validación automática
-- **Confirmaciones Interactivas**: Modal reutilizable para eliminaciones y acciones críticas
+- **Confirmaciones Interactivas**: Modal reutilizable para eliminaciones y acciones críticas, con configuraciones separadas en `cartModals.js`
 - **Formateo de Moneda**: Hook personalizado `useCurrency` para formato CLP chileno
-- **Mensajes Automáticos**: Notificaciones temporales que se auto-eliminan
+- **Mensajes Automáticos**: Notificaciones temporales que se auto-eliminan, incluyendo confirmación de vaciado exitoso
 - **Gestión de Estado**: Lógica robusta con manejo de errores y validaciones
 
 ### **Arquitectura Modular**
@@ -182,7 +183,7 @@ frontend/
    - Confirmación de eliminación con modal reutilizable
    - Cálculo automático de total con formato CLP
    - Mensajes automáticos de confirmación
-   - Opción vaciar carrito con confirmación
+   - Opción vaciar carrito con confirmación y mensaje de éxito
 
 4. **Contacto**
    - Formulario con validación
@@ -200,7 +201,7 @@ frontend/
 ✅ **React Hooks**: useState, useEffect, useContext, useCallback
 ✅ **Custom Hooks**: useCurrency para formateo de moneda CLP
 ✅ **Context API**: Gestión de temas (dark/light)
-✅ **Componentes Reutilizables**: ConfirmModal para confirmaciones
+✅ **Componentes Reutilizables**: ConfirmModal para confirmaciones, con configuraciones separadas
 ✅ **React Router**: Navegación SPA sin recargas
 ✅ **Validación de Formularios**: Regex, validación condicional
 ✅ **CSS Variables**: Reutilización de valores de diseño
@@ -248,6 +249,10 @@ Los mensajes y constantes centralizados están en [`src/constants/messages.js`](
 - Mensajes de notificación automática
 - Configuraciones de límites y validaciones
 
+Las configuraciones de modales reutilizables están en [`src/constants/cartModals.js`](frontend/src/constants/cartModals.js), permitiendo:
+- Gestión centralizada de comportamientos de modales
+- Fácil mantenimiento y extensión de confirmaciones
+
 El hook personalizado `useCurrency` en [`src/hooks/useCurrency.js`](frontend/src/hooks/useCurrency.js) maneja:
 - Formateo de números a moneda CLP chilena
 - Configuración regional y símbolos
@@ -280,5 +285,5 @@ Para consultas o sugerencias sobre el proyecto:
 
 ---
 
-**Última actualización:** Marzo 2024  
-**Versión:** 1.1.0
+**Última actualización:** Febrero 2026  
+**Versión:** 1.2.0

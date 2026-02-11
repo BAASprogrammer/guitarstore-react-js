@@ -386,12 +386,12 @@ button:disabled:hover {
 	transform: translate(-50%, -50%);
 	z-index: 1000;
 	background: var(--bg-light);
-	padding: 30px;
-	border: 1px solid var(--border-primary-15);
+	padding: clamp(20px, 5vw, 30px);
+	border: 3px solid var(--primary-strong);
 	border-radius: var(--br-lg);
 	box-shadow: var(--shadow-card-md);
 	max-width: 400px;
-	width: 90%;
+	width: clamp(80%, 83%, 90%);
 	animation: modalFadeIn 0.3s ease-out;
 }
 
@@ -405,9 +405,11 @@ button:disabled:hover {
 		transform: translate(-50%, -50%);
 	}
 }
-
+.confirm-modal .modal-content {
+	text-align: center;
+}
 .confirm-modal .modal-content .modal-title {
-	font-size: 1.5rem;
+	font-size: clamp(1.2rem, 4vw, 1.5rem);
 	font-weight: var(--weight-bold);
 	color: var(--text-dark);
 	margin-bottom: 15px;
@@ -415,11 +417,20 @@ button:disabled:hover {
 }
 
 .confirm-modal .modal-content p {
-	margin: 0 0 25px 0;
+	margin: clamp(15px, 3vw, 30px);
 	font-size: 1rem;
 	color: var(--text-dark-90);
 	line-height: 1.5;
 	text-align: center;
+}
+.confirm-modal .modal-content span {
+	display: block;
+	position: relative;
+	bottom: 15px;
+	font-size: 1.2rem;
+	color: var(--primary-color);
+	font-weight: var(--weight-bold);
+
 }
 
 .confirm-modal .modal-content .button-container {
@@ -471,28 +482,28 @@ button:disabled:hover {
 	cursor: not-allowed;
 }
 .confirm-modal .modal-title {
-	font-size: 1.2rem;
+	font-size: clamp(1rem, 3vw, 1.2rem);
 	font-weight: var(--weight-bold);
-	margin-bottom: 10px;
+	margin-top: 2px;
 	text-align: center;
 }
 
 .confirm-modal .close-modal {
 	position: absolute;
-	top: 5px;
+	top: -1px;
 	right: 10px;
 	font-size: 1rem;
 	font-weight: bold;
 	color: var(--white);
 	cursor: pointer;
 	background: var(--primary-color);
-	border: none;
+	border: 1px solid var(--primary-strong);
 	border-radius: var(--br-xl);
 	margin: 0.15rem;
-	width: 24px;
-	height: 24px;
-	min-width: 24px;
-	min-height: 24px;
+	width: 26px;
+	height: 26px;
+	min-width: 26px;
+	min-height: 26px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -502,4 +513,15 @@ button:disabled:hover {
 
 .confirm-modal .close-modal:hover {
 	background-color: var(--primary-hover);
+}
+.modal-title-closebtn-container {
+	position: absolute;
+	top: -1px;
+	z-index: 1001;
+	background: var(--primary-strong);
+	height: 30px;
+	width: calc(100% + 2px);
+	left: -1px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
 }

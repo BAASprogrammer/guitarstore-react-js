@@ -1,20 +1,24 @@
 import React from 'react';
 
-const ConfirmModal = ({ isOpen, message, onConfirm, onCancel, showButtons = true, showCloseButton = false, title = 'Importante', closeOnOverlay = true }) => {
+const ConfirmModal = ({ isOpen, message, onConfirm, onCancel, showButtons = true, showCloseButton = false, title = 'Importante', closeOnOverlay = true, confirmText = 'Confirmar', cancelText = 'Cancelar', showCancelButton = true }) => {
     if (!isOpen) return null;
     
     return (
         <>
             <div className='confirm-overlay' onClick={closeOnOverlay ? (onCancel || (() => {})) : (() => {})}></div>
             <div className="confirm-modal">
-                {showCloseButton && <button className='close-modal' onMouseDown={() => { console.log('close clicked'); (onCancel || (() => {}))(); }}>×</button>}
+                {showCloseButton &&  
+                    <div className='modal-title-closebtn-container'>
+                        <h1 className='modal-title'>{title}</h1>
+                        <button className='close-modal' title='Cerrar modal' onClick={onCancel || (() => {})}>×</button>
+                    </div>
+                }
                 <div className="modal-content">
-                    <h1 className='modal-title'>{title}</h1>
-                    <p>{message}</p>
+                    <p dangerouslySetInnerHTML={{ __html: message }}></p>
                     {showButtons && (
                         <div className="button-container">
-                            <button onClick={onCancel || (() => {})}>Cancelar</button>
-                            <button onClick={onConfirm || (() => {})}>Confirmar</button>
+                            {showCancelButton && <button onClick={onCancel || (() => {})}>{cancelText}</button>}
+                            <button onClick={onConfirm || (() => {})}>{confirmText}</button>
                         </div>
                     )}
                 </div>
