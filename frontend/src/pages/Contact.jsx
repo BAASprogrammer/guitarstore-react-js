@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import "../assets/css/contact.css";
+import dataMessage from '../constants/messages';
 
 export default function Contact(){
     const [error, setError] = useState({});
@@ -10,55 +11,71 @@ export default function Contact(){
         email: "",
         mensaje: ""
     });
-    const newErrors = {};
-    const validateForm = () => {
+    const validateForm = useCallback(() => {
+        const errors = {};
         if (formData.nombre.trim() === "" || formData.email.trim() === "" || formData.mensaje.trim() === "") {
-            newErrors.general = "Por favor, complete todos los campos.";
-            return false;
+            errors.general = dataMessage.contact.general;
+            return errors;
         }
         if (formData.nombre.trim() === "" || formData.nombre.trim().length < 3) {
-            newErrors.nombre = "El nombre debe tener al menos 3 caracteres.";
-            return false;
+            errors.nombre = dataMessage.contact.nombre;
+            return errors;
         }
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(formData.email.trim())) {
-            newErrors.email = "Por favor, ingrese un correo electrónico válido.";
-            return false;
+            errors.email = dataMessage.contact.email;
+            return errors;
         }
         if (formData.mensaje.trim() === "" || formData.mensaje.trim().length < 10) {
-            newErrors.mensaje = "El mensaje debe tener al menos 10 caracteres.";
-            return false;
+            errors.mensaje = dataMessage.contact.mensaje;
+            return errors;
         }
-        setError(newErrors);
-        return true;
-    }
+        return null; // No errors
+    }, [formData]);
 
-    const handleChange = (e) => {
+    const handleChange = useCallback((e) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
-            [name]: value
+            [name]: value.trimStart() // Trim leading whitespace only to allow typing spaces
         }));
         setError({}); // Clear error when user starts typing
-    }
+    }, []);
 
-    const handleSubmit = (event) => {
+    const timeoutRef = useRef(null);
+
+    const handleSubmit = useCallback((event) => {
         event.preventDefault();
-        if (validateForm()) {
-            setSendEmail("Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto.");
+        const validationErrors = validateForm();
+        if (!validationErrors) {
+            setSendEmail(dataMessage.contact.success);
             setFormData({
                 nombre: "",
                 email: "",
                 mensaje: ""
             });
-            setTimeout(() => {
+            // Clear any existing timeout
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+            timeoutRef.current = setTimeout(() => {
                 setSendEmail("");
+                timeoutRef.current = null;
             }, 5000);
-        }else{
-            setError(newErrors);
+        } else {
+            setError(validationErrors);
             setSendEmail("");
         }
-    }
+    }, [validateForm]);
+
+    // Cleanup timeout on unmount
+    useEffect(() => {
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
+    }, []);
     return(
         <section id="contact" className="contact-section position-relative">
             {/* Decorative animated dots (non-interactive, aria-hidden) */}
