@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faGuitar, faUser, faFile } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faGuitar, faUser, faFile, faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,7 @@ export default function Menu(){
                 {/* Overlay to close menu when clicking outside */}
                 {isMenuOpen && <div className="menu-overlay" onClick={() => setIsMenuOpen(false)}></div>}
                 <button className="menu-toggle-button" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
-                    ☰
+                    <FontAwesomeIcon icon={faBars} size="xs"/>
                 </button>
             </div>
             <nav className={`header-menu${isMenuOpen ? ' menu-opened' : ' menu-closed'}`}>
