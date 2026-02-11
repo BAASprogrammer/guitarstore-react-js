@@ -291,4 +291,4 @@ Para consultas o sugerencias sobre el proyecto:
 ---
 
 **Última actualización:** Marzo 2024  
-**Versión:** 1.5.0
+**Versión:** 1.6.0
