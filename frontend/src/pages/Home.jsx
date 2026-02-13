@@ -5,7 +5,7 @@ import Products from "./Products";
 import HomeGuitar from "../assets/images/home/acoustic-guitar.jpg";
 import "../assets/css/home.css";
 
-export default function Home({ dato, cart, addCart }){
+export default function Home({ dato, cart, addCart }) {
 
   const [isDark, setIsDark] = useState(false);
 
@@ -14,15 +14,15 @@ export default function Home({ dato, cart, addCart }){
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => setIsDark(e.matches));
     return () => window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', e => setIsDark(e.matches));
   }, []);
-  return(
+  return (
     <section id="index" className="index-section">
       {/* Decorative animated guitar dots (non-interactive, aria-hidden) */}
       <div className="guitar-dot-bg" aria-hidden>
-        <span className="guitar-dot guitar-dot--1"><FontAwesomeIcon className="guitar-icon" icon={faGuitar} style={{transform: 'rotate(-15deg)'}} /></span>
+        <span className="guitar-dot guitar-dot--1"><FontAwesomeIcon className="guitar-icon" icon={faGuitar} style={{ transform: 'rotate(-15deg)' }} /></span>
         <span className="guitar-dot guitar-dot--2">
           <FontAwesomeIcon className={`guitar-icon ${isDark ? 'star-dark' : 'star-light'}`} icon={faStar} />
         </span>
-        <span className="guitar-dot guitar-dot--3"><FontAwesomeIcon className="guitar-icon" icon={faMusic} style={{transform: 'rotate(25deg)'}} /></span>
+        <span className="guitar-dot guitar-dot--3"><FontAwesomeIcon className="guitar-icon" icon={faMusic} style={{ transform: 'rotate(25deg)' }} /></span>
       </div>
       <div className="grid welcome-container justify-center align-center">
         <div>
@@ -32,28 +32,28 @@ export default function Home({ dato, cart, addCart }){
             <span className="welcome-line"></span><span className="welcome-guitar">🎸</span>
           </div>
           <div className="flex button-home-container">
-            <button className="view-products" title="Explorar Nuestro Catálogo" 
-                onClick={() => {
-                    const productsSection = document.getElementById('products');
-                    if (productsSection) {
-                        productsSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }}>
-                Ver Productos <FontAwesomeIcon icon={faShoppingCart} />
+            <button className="view-products" title="Explorar Nuestro Catálogo"
+              onClick={() => {
+                const productsSection = document.getElementById('products');
+                if (productsSection) {
+                  productsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}>
+              Ver Productos <FontAwesomeIcon icon={faShoppingCart} />
             </button>
             <button className="why-us" title="¿Por qué elegirnos?"
-                onClick={() => {
-                    const whyChooseUsSection = document.querySelector('.why-choose-us');
-                    if (whyChooseUsSection) {
-                        whyChooseUsSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }}>
-                Conoce más <FontAwesomeIcon icon={faInfoCircle} />
+              onClick={() => {
+                const whyChooseUsSection = document.querySelector('.why-choose-us');
+                if (whyChooseUsSection) {
+                  whyChooseUsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}>
+              Conoce más <FontAwesomeIcon icon={faInfoCircle} />
             </button>
           </div>
         </div>
         <div>
-          <div><img className="guitar-home flex justify-center align-center" src={HomeGuitar} width="60%" alt="Guitarra de Bienvenida" /></div>
+          <div><img className="guitar-home flex justify-center align-center" src={HomeGuitar} alt="Guitarra de Bienvenida" /></div>
         </div>
       </div>
       <div className="home-products-section">
