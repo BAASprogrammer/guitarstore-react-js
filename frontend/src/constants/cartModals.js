@@ -8,8 +8,10 @@ export const getModalConfigs = (dataMessage, MAX_QUANTITY, message, cancelDelete
         confirmText: "Aceptar",
         onConfirm: cancelDeleteProduct,
         showCloseButton: true,
-        title: dataMessage.delete.title
+        title: dataMessage.delete.title,
+        closeOnOverlay: false
     },
+
     {
         key: `max-${message.type}`,
         type: "max",
@@ -55,6 +57,8 @@ export const getModalConfigs = (dataMessage, MAX_QUANTITY, message, cancelDelete
         confirmText: "Aceptar",
         onConfirm: () => setMessage({}),
         showCloseButton: true,
-        title: dataMessage.emptied.title
+        title: dataMessage.emptied.title,
+        closeOnOverlay: false
     }
+
 ];

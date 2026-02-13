@@ -2,20 +2,30 @@
 	position: relative;
 }
 
-.overlay-shopping-cart,
-.confirm-overlay {
+/* Global cart overlay (background) */
+.overlay-shopping-cart {
 	position: fixed;
 	inset: 0;
 	background-color: var(--bg-overlay-dark);
 	backdrop-filter: var(--glass-blur-sm);
-	/* Reduced blur to avoid accumulation */
 	z-index: var(--z-overlay);
 	animation: fadeIn var(--transition-fast);
 }
 
-/* Prevent double darkening when both overlays are present */
+/* Modal overlay (blocks cart interaction) */
+.confirm-overlay {
+	position: fixed;
+	inset: 0;
+	background-color: rgba(var(--black-rgb), 0.4);
+	backdrop-filter: var(--glass-blur-sm);
+	z-index: var(--z-modal-overlay);
+	animation: fadeIn var(--transition-fast);
+}
+
+/* Prevent double darkening by making the deeper overlay slightly more transparent if needed,
+   but ensure it blocks interaction by being higher in the stack */
 .overlay-shopping-cart+.modal-portal .confirm-overlay {
-	background-color: transparent;
+	backdrop-filter: blur(2px);
 }
 
 @keyframes fadeIn {
@@ -93,17 +103,18 @@
 
 .close-shopping-cart {
 	position: absolute;
-	top: 0.75rem;
-	right: 0.75rem;
-	width: 1.5rem;
-	height: 1.5rem;
+	top: 0.5rem;
+	right: 0.5rem;
+	width: 2rem;
+	height: 2rem;
 	display: grid;
 	place-items: center;
-	font-size: 1.25rem;
+	font-size: 1.5rem;
 	border-radius: 50%;
 	cursor: pointer;
 	transition: var(--transition-fast);
-	color: var(--text-muted);
+	color: var(--text-secondary);
+	z-index: 2;
 }
 
 .close-shopping-cart:hover {
@@ -213,7 +224,7 @@
 	font-family: var(--font-primary);
 	font-weight: var(--weight-semi-bold);
 	font-size: var(--fs-small);
-	color: var(--text-dark);
+	color: var(--text-primary);
 }
 
 /* ===== FOOTER ELEMENTS ===== */
@@ -244,9 +255,14 @@
 }
 
 .empty-cart-button {
-	background: var(--bg-card);
-	color: var(--text-dark);
+	background: rgba(var(--black-rgb), 0.05);
+	color: var(--text-primary);
 	border: 1px solid var(--border-card-light);
+}
+
+.dark-theme .empty-cart-button {
+	background: rgba(var(--white-rgb), 0.1);
+	border-color: rgba(var(--white-rgb), 0.15);
 }
 
 .empty-cart-button:hover {
@@ -307,8 +323,9 @@
 /* ===== BADGE ===== */
 .cart-badge {
 	position: absolute;
-	top: -5px;
-	right: -8px;
+	top: 0;
+	right: 0;
+	transform: translate(40%, -40%);
 	background: var(--primary-strong);
 	color: var(--white);
 	font-size: 0.65rem;
@@ -336,16 +353,35 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: min(90vw, 400px);
-	background: var(--bg-white-95);
+	width: min(90vw, 420px);
+	background: var(--bg-card);
 	backdrop-filter: var(--glass-blur);
 	-webkit-backdrop-filter: var(--glass-blur);
 	border: var(--border-glass);
 	border-radius: var(--br-xl);
-	box-shadow: var(--shadow-md);
+	box-shadow: var(--shadow-md), 0 0 40px rgba(0, 0, 0, 0.1);
 	z-index: var(--z-modal);
-	padding: 2rem;
+	padding: clamp(2.5rem, 7vw, 3rem) clamp(1.5rem, 5vw, 2rem) clamp(1.5rem, 5vw, 2rem);
 	overflow: hidden;
+	animation: modalSlideFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Premium Glow for Dark Mode */
+.dark-theme .confirm-modal {
+	box-shadow: var(--shadow-md), 0 0 30px rgba(255, 126, 0, 0.05);
+	border-color: rgba(255, 126, 0, 0.2);
+}
+
+@keyframes modalSlideFadeIn {
+	from {
+		opacity: 0;
+		transform: translate(-50%, -45%) scale(0.95);
+	}
+
+	to {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
 }
 
 .confirm-modal .modal-content {
@@ -357,33 +393,55 @@
 	position: absolute;
 	top: 0.5rem;
 	right: 0.5rem;
-	font-size: 1.5rem;
-	color: var(--text-muted);
+	font-size: 1.75rem;
+	color: var(--text-secondary);
 	background: transparent;
 	border: none;
 	cursor: pointer;
 	line-height: 1;
+	width: 2.5rem;
+	height: 2.5rem;
+	display: grid;
+	place-items: center;
+	border-radius: 50%;
+	transition: var(--transition-fast);
+}
+
+.confirm-modal .close-modal:hover {
+	background: rgba(var(--white-rgb), 0.1);
+	color: var(--primary-color);
 }
 
 .confirm-modal .modal-title {
 	font-family: var(--font-display);
 	font-size: var(--fs-h2);
-	margin-bottom: 1rem;
-	color: var(--text-dark);
+	margin-bottom: 1.5rem;
+	color: var(--text-primary);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 0 1rem;
+	/* Clear horizontal space for the X button if needed */
 }
 
 .confirm-modal .modal-body p {
 	font-family: var(--font-primary);
 	font-size: var(--fs-body);
 	line-height: 1.6;
-	color: var(--text-muted);
-	margin-bottom: 2rem;
+	color: var(--text-secondary);
+	margin-bottom: 2.5rem;
+}
+
+.confirm-modal .modal-body p b,
+.confirm-modal .modal-body p strong {
+	color: var(--primary-color);
+	font-weight: var(--weight-bold);
 }
 
 .confirm-modal .button-container {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+	display: flex;
 	gap: 1rem;
+	justify-content: center;
+	align-items: center;
 }
 
 .confirm-modal .btn-secondary,
@@ -399,21 +457,30 @@
 }
 
 .confirm-modal .btn-secondary {
-	background: var(--bg-card);
-	color: var(--text-dark);
+	background: var(--bg-light);
+	color: var(--text-primary);
+	border: 1px solid var(--border-card-light);
+}
+
+.dark-theme .confirm-modal .btn-secondary {
+	background: rgba(var(--white-rgb), 0.05);
 }
 
 .confirm-modal .btn-primary {
 	background: var(--primary-color);
 	color: var(--white);
+	box-shadow: var(--shadow-primary-sm);
 }
 
 .confirm-modal .btn-primary:hover {
 	background: var(--primary-hover);
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-primary-md);
 }
 
 .confirm-modal .btn-secondary:hover {
-	background: var(--border-light);
+	background: rgba(var(--white-rgb), 0.1);
+	border-color: var(--primary-color);
 }
 
 /* Pay tooltip message */

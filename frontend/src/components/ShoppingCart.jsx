@@ -138,7 +138,7 @@ export default function ShoppingCart({ dataCart, deleteCart, emptyCart }) {
     const modalConfigs = getModalConfigs(dataMessage, MAX_QUANTITY, message, cancelDeleteProduct, confirmDeleteProduct, setMessage, emptyCart, setIsOpenCart);
 
     return (<div className="right shoppingcart">
-        {isOpenCart && <div className='overlay-shopping-cart' onClick={message.type ? () => { } : handleCart}></div>}
+        {isOpenCart && <div className='overlay-shopping-cart' onClick={() => { }}></div>}
         {modalConfigs.map(config => {
             const { key, ...configProps } = config;
             return (

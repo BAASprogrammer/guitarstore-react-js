@@ -1,4 +1,4 @@
-const ConfirmModal = ({ isOpen, message, onConfirm, onCancel, showButtons = true, showCloseButton = false, title = 'Importante', closeOnOverlay = true, confirmText = 'Confirmar', cancelText = 'Cancelar', showCancelButton = true }) => {
+const ConfirmModal = ({ isOpen, message, onConfirm, onCancel, showButtons = true, showCloseButton = false, title = 'Importante', closeOnOverlay = false, confirmText = 'Confirmar', cancelText = 'Cancelar', showCancelButton = true }) => {
     if (!isOpen) return null;
 
     return (
