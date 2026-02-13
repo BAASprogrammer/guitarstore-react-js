@@ -3,27 +3,27 @@ import "../assets/css/modedarklight.css";
 import Switch from "./Switch";
 import Menu from "./Menu";
 
-export default function Header({dataCart, deleteCart, emptyCart}){
+export default function Header({ dataCart, deleteCart, emptyCart }) {
     const nombretienda = "GuitarStore"
-    return(
+    return (
         <header className="sticky-menu">
-            <div className="header-container flex justify-between flex-wrap align-center">
+            <div className="header-container grid align-center">
                 <div className="header-logo left align-center">
                     <a href="/home" className="flex align-center" title="Ir al inicio">
-                    <img src={require("../assets/images/header/guitar.png")} alt="Logo" width={'50px'} height={'50px'}></img>
-                    <h1>{nombretienda}</h1> 
+                        <img src={require("../assets/images/header/guitar.png")} alt="Logo" width={'50px'} height={'50px'}></img>
+                        <h1>{nombretienda}</h1>
                     </a>
                 </div>
                 <div>
-                    <Menu/>
+                    <Menu />
                 </div>
             </div>
             <div className="darkmode-shop right flex align-center gap-2 position-absolute top-05 right-2">
-                <Switch/>
+                <Switch />
                 <ShoppingCart
-                    dataCart = {dataCart}
-                    deleteCart={deleteCart} 
-                    emptyCart = {emptyCart}
+                    dataCart={dataCart}
+                    deleteCart={deleteCart}
+                    emptyCart={emptyCart}
                 />
             </div>
         </header>
