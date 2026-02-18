@@ -336,7 +336,7 @@
         width: calc(100vw - 2rem);
         max-width: none;
         right: 1rem;
-        left: 1rem;
+        left: .35rem;
         top: 80px;
         padding: 0.75rem 0.6rem;
         z-index: var(--z-cart);
@@ -507,37 +507,34 @@
         font-size: 1rem;
     }
 
-    /* Shopping Cart - payment message position */
-    .pay-message {
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
+    /* Shopping Cart - footer stacked on very small screens */
+    .modal-row.footer {
+        padding-top: 0.75rem;
+    }
+
+    .modal-row.footer .grid-item-modal.right {
+        font-size: 0.95rem;
         text-align: center;
+        margin-bottom: 0.6rem;
     }
 
-    .modal-row {
-        grid-template-columns: 1fr 1.5fr 0.8fr 1.2fr;
+    /* Buttons: keep side by side but with reduced font and padding */
+    .cart-buttons-group {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.4rem;
     }
 
-    /* Contact */
-    .form-group {
-        width: 100%;
-    }
-
-    /* Keep only 2 decorative dots */
-    .dot--3 {
-        display: none;
-    }
-
-    /* More compact cart buttons */
     .empty-cart-button,
     .pay-cart-button {
-        width: 47%;
-        padding: 0.4rem 0.3rem;
+        width: 100%;
+        padding: 0.6rem 0.25rem;
+        font-size: 0.68rem;
+        letter-spacing: 0;
+        white-space: nowrap;
     }
 
     .grid-item-modal>div {
-        min-width: 100px
+        min-width: 0;
     }
 }
 
