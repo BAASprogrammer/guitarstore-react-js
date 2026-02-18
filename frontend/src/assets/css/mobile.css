@@ -1,22 +1,25 @@
 /* ===== MOBILE RESPONSIVE STYLES ===== */
 /* Base styles already use clamp() for fluid responsiveness.
-   These media queries handle major structural layout changes. */
+   These media queries handle major structural layout changes.
+   Order: largest → smallest breakpoint. */
 
-/* Remove tap highlight on mobile */
+/* ===== GLOBAL MOBILE RESET ===== */
 * {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
 }
 
-/* Desktop Large - layout adjustments only */
-@media screen and (max-width:1366px) {
+/* ===== DESKTOP LARGE (max-width: 1366px) ===== */
+@media screen and (max-width: 1366px) {
+
     .menu-container.grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Desktop Small */
-@media screen and (max-width:1023px) {
+/* ===== DESKTOP SMALL (max-width: 1023px) ===== */
+@media screen and (max-width: 1023px) {
+
     .menu-container.grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -49,8 +52,8 @@
     }
 }
 
-/* Tablets & Mobile */
-@media screen and (max-width:768px) {
+/* ===== TABLETS & MOBILE (max-width: 768px) ===== */
+@media screen and (max-width: 768px) {
 
     /* Grid Layout - 2 columns on tablets */
     .menu-container.grid {
@@ -108,12 +111,21 @@
         padding: 0.8rem 1.2rem;
     }
 
-    /* Shopping Cart - mobile adjustments */
+    .welcome-title {
+        font-size: 2rem;
+    }
+
+    /* ---- Shopping Cart ---- */
     .modal-shoppingcart.data-shoppingcart {
         width: min(92vw, 450px);
         right: 4vw;
         left: auto;
         padding: 0.75rem;
+    }
+
+    .modal-shoppingcart.empty-shoppingcart {
+        font-size: 0.9rem;
+        width: max-content;
     }
 
     .modal-row {
@@ -123,20 +135,14 @@
         align-items: center;
     }
 
-    .grid-item-modal img {
-        width: 42px;
-        height: 42px;
-    }
-
-    .add-cart-button {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-        width: 90%;
-    }
-
     .grid-item-modal {
         padding: 0.2rem;
         font-size: 0.78rem;
+    }
+
+    .grid-item-modal img {
+        width: 42px;
+        height: 42px;
     }
 
     /* Keep quantity controls horizontal on tablets */
@@ -153,19 +159,6 @@
         font-size: 0.85rem;
     }
 
-    .darkmode-shop {
-        right: 1rem;
-    }
-
-    .modal-shoppingcart.empty-shoppingcart {
-        font-size: 0.9rem;
-        width: max-content;
-    }
-
-    .welcome-title {
-        font-size: 2rem;
-    }
-
     /* Cart footer buttons - side by side */
     .cart-buttons-group {
         grid-template-columns: 1fr 1fr;
@@ -180,9 +173,20 @@
         white-space: nowrap;
     }
 
-    /* Dark/Light Mode Switch */
+    /* ---- Add to Cart Button ---- */
+    .add-cart-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        width: 90%;
+    }
+
+    /* ---- Dark/Light Mode Switch ---- */
+    .darkmode-shop {
+        right: 1rem;
+    }
+
     .mode-dark-light {
-        bottom: 20px;
+        bottom: 200px;
         left: 10px;
     }
 
@@ -190,12 +194,7 @@
         height: 24px;
     }
 
-    /* Dark/Light Mode Position */
-    .mode-dark-light {
-        bottom: 200px;
-    }
-
-    /* Menu toggle button for mobile */
+    /* ---- Menu Toggle ---- */
     .menu-toggle-button {
         display: block;
         position: absolute;
@@ -205,8 +204,8 @@
         cursor: pointer;
         padding: 0.5rem;
         min-width: 44px;
-        /* Touch-friendly */
         min-height: 44px;
+        /* Touch-friendly */
     }
 
     .menu-closed {
@@ -249,7 +248,7 @@
         border-bottom: none;
     }
 
-    /* Dark theme */
+    /* Dark theme menu */
     .dark-theme .menu-opened {
         background-color: var(--black);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
@@ -266,12 +265,12 @@
         filter: drop-shadow(0 -1px 1px rgba(255, 126, 0, 0.3));
     }
 
-    /* Categories Buttons Container */
+    /* ---- Categories ---- */
     .categories-buttons-container .category-button {
         flex: 1 1 auto;
     }
 
-    /* Why Choose Us - stacked column layout */
+    /* ---- Why Choose Us ---- */
     .why-choose-us-grid {
         flex-direction: column;
         align-items: center;
@@ -290,7 +289,7 @@
         font-size: 1.8rem;
     }
 
-    /* About Container */
+    /* ---- About ---- */
     .about-container {
         padding: 1.25rem;
     }
@@ -299,15 +298,37 @@
         padding: 2rem 1rem;
     }
 
-    /* Main Container */
+    /* ---- Main Container ---- */
     .main-container {
         padding: 0 1rem;
     }
 }
 
-@media screen and (max-width:576px) {
+/* ===== DESKTOP - Dark/Light Mode label (min-width: 768px) ===== */
+@media (min-width: 768px) {
 
-    /* Grid Layout - single column on small mobiles */
+    .mode-dark-light label {
+        width: 70px;
+        height: 25px;
+    }
+
+    .menu-overlay {
+        display: none;
+    }
+
+    .header-menu .menu-icon {
+        display: none;
+    }
+
+    .header-menu .menu-title {
+        display: none;
+    }
+}
+
+/* ===== SMALL MOBILE (max-width: 576px) ===== */
+@media screen and (max-width: 576px) {
+
+    /* Grid Layout - single column */
     .menu-container.grid {
         grid-template-columns: 1fr;
         gap: 1.25rem;
@@ -328,7 +349,7 @@
         margin: 0;
     }
 
-    /* Shopping Cart - centered on small mobiles */
+    /* ---- Shopping Cart ---- */
 
     /* Cart modal: full width, fixed above header */
     .modal-shoppingcart.data-shoppingcart {
@@ -345,43 +366,63 @@
         overflow-y: auto;
     }
 
-    /* Switch to 3-column card layout: image | name+price | quantity */
+    /* Empty cart modal */
+    .modal-shoppingcart.empty-shoppingcart {
+        position: fixed;
+        width: min(90vw, 320px);
+        right: 50%;
+        transform: translateX(50%);
+        top: 80px;
+        z-index: var(--z-cart);
+    }
+
+    /* 3-column card layout: image | name+price | quantity */
     .modal-row {
         grid-template-columns: 44px 1fr auto;
-        grid-template-areas:
-            "img info qty";
+        grid-template-areas: "img info qty";
         gap: 0.5rem;
         align-items: center;
         padding: 0.6rem 0;
         font-size: 0.8rem;
     }
 
-    /* Hide the table header row on small screens */
+    /* Hide table header row */
     .modal-row.header {
         display: none;
     }
 
-    /* Image column */
+    /* Footer row: reset item grid areas, stack total above buttons */
+    .modal-row.footer {
+        grid-template-columns: 1fr;
+        grid-template-areas: unset;
+        gap: 0.5rem;
+    }
+
+    .modal-row.footer .grid-item-modal.right {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+        text-align: right;
+    }
+
+    /* Item rows: assign grid areas */
     .modal-row:not(.footer) .grid-item-modal:nth-child(1) {
         grid-area: img;
     }
 
-    /* Name column becomes the info block (name + price stacked) */
     .modal-row:not(.footer) .grid-item-modal:nth-child(2) {
         grid-area: info;
     }
 
-    /* Price column: hide as separate column, shown inside info block via label */
+    /* Price column: hidden — shown via ::after below product name */
     .modal-row:not(.footer) .grid-item-modal:nth-child(3) {
         display: none;
     }
 
-    /* Quantity column */
     .modal-row:not(.footer) .grid-item-modal:nth-child(4) {
         grid-area: qty;
     }
 
-    /* Show price inline below product name (item rows only) */
+    /* Price shown inline below product name */
     .modal-row:not(.footer) .grid-item-modal:nth-child(2)::after {
         content: attr(data-price);
         display: block;
@@ -391,14 +432,14 @@
         margin-top: 2px;
     }
 
-    .grid-item-modal img {
-        width: 40px;
-        height: 40px;
-    }
-
     .grid-item-modal {
         padding: 0.15rem;
         font-size: 0.8rem;
+    }
+
+    .grid-item-modal img {
+        width: 40px;
+        height: 40px;
     }
 
     /* Quantity controls always horizontal */
@@ -422,20 +463,7 @@
         font-size: 0.8rem;
     }
 
-    /* Footer: total + buttons — reset item grid areas */
-    .modal-row.footer {
-        grid-template-columns: 1fr;
-        grid-template-areas: unset;
-        gap: 0.5rem;
-    }
-
-    .modal-row.footer .grid-item-modal.right {
-        font-size: 1rem;
-        margin-bottom: 0.75rem;
-        text-align: right;
-    }
-
-    /* Buttons side by side, full width each */
+    /* Buttons side by side */
     .cart-buttons-group {
         grid-template-columns: 1fr 1fr;
         gap: 0.5rem;
@@ -450,17 +478,7 @@
         letter-spacing: 0;
     }
 
-    /* Empty cart modal on small mobiles */
-    .modal-shoppingcart.empty-shoppingcart {
-        position: fixed;
-        width: min(90vw, 320px);
-        right: 50%;
-        transform: translateX(50%);
-        top: 80px;
-        z-index: var(--z-cart);
-    }
-
-    /* Contact */
+    /* ---- Contact ---- */
     .contact-section {
         width: 98%;
         border-radius: 8px;
@@ -470,13 +488,13 @@
         width: 100%;
     }
 
-    /* Hide more dots for performance */
+    /* ---- Decorative dots ---- */
     .dot--2,
     .dot--5 {
         display: none;
     }
 
-    /* Why Choose Us - full width on small mobiles */
+    /* ---- Why Choose Us ---- */
     .why-choose-us {
         padding: 0;
     }
@@ -497,10 +515,10 @@
     }
 }
 
-/* Mobile Small - very small screens */
-@media screen and (max-width:423px) {
+/* ===== VERY SMALL MOBILE (max-width: 423px) ===== */
+@media screen and (max-width: 423px) {
 
-    /* Adjusted header */
+    /* Header */
     .header-container {
         padding: 0.5rem 0.75rem;
     }
@@ -509,7 +527,7 @@
         font-size: 1rem;
     }
 
-    /* Shopping Cart - footer stacked on very small screens */
+    /* ---- Shopping Cart footer ---- */
     .modal-row.footer {
         padding-top: 0.75rem;
     }
@@ -520,7 +538,7 @@
         margin-bottom: 0.6rem;
     }
 
-    /* Buttons: keep side by side but with reduced font and padding */
+    /* Buttons: compact but readable */
     .cart-buttons-group {
         grid-template-columns: 1fr 1fr;
         gap: 0.4rem;
@@ -538,30 +556,21 @@
     .grid-item-modal>div {
         min-width: 0;
     }
-}
 
-/* Dark/Light Mode - Desktop */
-@media (min-width: 768px) {
-    .mode-dark-light label {
-        width: 70px;
-        height: 25px;
+    /* ---- Contact ---- */
+    .form-group {
+        width: 100%;
     }
 
-    .menu-overlay {
-        display: none;
-    }
-
-    .header-menu .menu-icon {
-        display: none;
-    }
-
-    .header-menu .menu-title {
+    /* ---- Decorative dots ---- */
+    .dot--3 {
         display: none;
     }
 }
 
-/* Landscape orientation on mobile */
+/* ===== LANDSCAPE ORIENTATION (mobile) ===== */
 @media screen and (max-height: 500px) and (orientation: landscape) {
+
     .welcome-container {
         gap: 1rem;
     }
