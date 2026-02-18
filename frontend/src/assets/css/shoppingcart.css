@@ -256,14 +256,15 @@
 }
 
 .empty-cart-button {
-	background: rgba(var(--black-rgb), 0.05);
+	background: transparent;
 	color: var(--text-primary);
-	border: 1px solid var(--border-card-light);
+	border: 1.5px solid var(--border-card-light);
 }
 
 .dark-theme .empty-cart-button {
-	background: rgba(var(--white-rgb), 0.1);
-	border-color: rgba(var(--white-rgb), 0.15);
+	background: rgba(var(--white-rgb), 0.06);
+	border-color: rgba(var(--white-rgb), 0.2);
+	color: var(--white);
 }
 
 .empty-cart-button:hover {

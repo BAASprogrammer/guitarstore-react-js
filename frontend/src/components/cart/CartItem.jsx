@@ -4,7 +4,7 @@ export default function CartItem({ item, cantidad, addProduct, deleteProduct, ha
             <div className="grid-item-modal">
                 <img src={require(`../../assets/images/products/${item.imagen}`)} alt="Guitarra" />
             </div>
-            <div className="grid-item-modal">
+            <div className="grid-item-modal" data-price={formatCurrency(item.precio)}>
                 <label title={item.nombre}>{item.nombre}</label>
             </div>
             <div className="grid-item-modal">
