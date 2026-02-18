@@ -13,7 +13,7 @@ export default function Approutes({dato, addCart, cart}){
             <Route path="/home" element={<Home dato={dato} cart={cart} addCart={addCart} />} />
             <Route path="/products" element={<Products dato={dato} cart={cart} addCart={addCart} />} />
             <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-            </Routes>
+            <Route path="/contact" element={<Contact />} />
+        </Routes>
     )
 }
