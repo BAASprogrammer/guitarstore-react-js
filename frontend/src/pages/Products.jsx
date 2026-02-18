@@ -1,22 +1,28 @@
+
 import { useState } from "react";
 import useCurrency from '../hooks/useCurrency';
+// import { motion } from "framer-motion";
 
 export default function Products({ dato, addCart, cart }) {
-    const [filterCategory, setFilterCategory] = useState('todas');
-    const filteredData = filterCategory === 'todas' ? dato : dato.filter(item => item.categoria.toLowerCase().includes(filterCategory.toLowerCase()));
+        const [filterCategory, setFilterCategory] = useState('todas');
+        const filteredData = filterCategory === 'todas' ? dato : dato.filter(item => item.categoria.toLowerCase().includes(filterCategory.toLowerCase()));
 
-    // Filtered data to display
-    const dataToShow = filteredData;
-    const formatCurrency = useCurrency();
+        // Ejemplos de variantes de animación
 
-    const handleAddCart = (item) => {
-        const existingProducts = cart.some((product) => product.id === item.id) // some returns true when the condition is met
-        if (!existingProducts) {
-            addCart(item)
+        // Filtered data to display
+        const dataToShow = filteredData;
+        const formatCurrency = useCurrency();
+
+        const handleAddCart = (item) => {
+                const existingProducts = cart.some((product) => product.id === item.id) // some returns true when the condition is met
+                if (!existingProducts) {
+                        addCart(item)
+                }
         }
-    }
-    return (
-        <section id="products" className="products-section">
+        // Cambia la variante aquí para probar diferentes animaciones:
+        // const animation = null;
+        return (
+            <section id="products" className="products-section">
             <div className="ppal-text center">
                 <h1 className="our-collection">Nuestra <span className="collection-txt">Colección</span></h1>
             </div>

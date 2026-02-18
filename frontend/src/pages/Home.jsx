@@ -1,11 +1,12 @@
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCertificate, faTruck, faShieldHalved, faGuitar, faMusic, faHeadphones, faShoppingCart, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import Products from "./Products";
 import HomeGuitar from "../assets/images/home/acoustic-guitar.jpg";
 import "../assets/css/home.css";
+// import { motion } from "framer-motion";
 
 export default function Home({ dato, cart, addCart }) {
-
   return (
     <section id="index" className="index-section">
       {/* Decorative animated guitar dots (non-interactive, aria-hidden) */}
