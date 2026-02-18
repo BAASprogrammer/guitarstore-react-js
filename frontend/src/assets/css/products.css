@@ -177,8 +177,7 @@
 }
 
 .grid-item .add-cart-button {
-	margin-top: auto;
-	/* Pushes button to the bottom */
+	margin: auto auto 0 auto;
 }
 
 .grid-item:hover {
