@@ -461,6 +461,7 @@
 	cursor: pointer;
 	transition: var(--transition-fast);
 	border: none;
+	width: 30%;
 }
 
 .confirm-modal .btn-secondary {

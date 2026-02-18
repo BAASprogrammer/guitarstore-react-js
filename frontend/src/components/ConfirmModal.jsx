@@ -5,8 +5,8 @@ const ConfirmModal = ({ isOpen, message, onConfirm, onCancel, showButtons = true
         <div className="modal-portal">
             <div className='confirm-overlay' onClick={closeOnOverlay ? (onCancel || (() => { })) : (() => { })}></div>
             <div className="confirm-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+                {showCloseButton && <button className='close-modal' title='Cerrar modal' onClick={onCancel || (() => { })}>×</button>}
                 <div className="modal-content">
-                    {showCloseButton && <button className='close-modal' title='Cerrar modal' onClick={onCancel || (() => { })}>×</button>}
                     {title && <h2 id="modal-title" className='modal-title'>{title}</h2>}
                     <div className="modal-body">
                         <p dangerouslySetInnerHTML={{ __html: message }}></p>
