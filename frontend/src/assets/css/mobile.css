@@ -362,27 +362,27 @@
     }
 
     /* Image column */
-    .grid-item-modal:nth-child(1) {
+    .modal-row:not(.footer) .grid-item-modal:nth-child(1) {
         grid-area: img;
     }
 
     /* Name column becomes the info block (name + price stacked) */
-    .grid-item-modal:nth-child(2) {
+    .modal-row:not(.footer) .grid-item-modal:nth-child(2) {
         grid-area: info;
     }
 
     /* Price column: hide as separate column, shown inside info block via label */
-    .grid-item-modal:nth-child(3) {
+    .modal-row:not(.footer) .grid-item-modal:nth-child(3) {
         display: none;
     }
 
     /* Quantity column */
-    .grid-item-modal:nth-child(4) {
+    .modal-row:not(.footer) .grid-item-modal:nth-child(4) {
         grid-area: qty;
     }
 
-    /* Show price inline below product name */
-    .grid-item-modal:nth-child(2)::after {
+    /* Show price inline below product name (item rows only) */
+    .modal-row:not(.footer) .grid-item-modal:nth-child(2)::after {
         content: attr(data-price);
         display: block;
         font-size: 0.75rem;
@@ -422,9 +422,11 @@
         font-size: 0.8rem;
     }
 
-    /* Footer: total + buttons */
+    /* Footer: total + buttons — reset item grid areas */
     .modal-row.footer {
         grid-template-columns: 1fr;
+        grid-template-areas: unset;
+        gap: 0.5rem;
     }
 
     .modal-row.footer .grid-item-modal.right {
