@@ -1,44 +1,49 @@
 /* ===== MOBILE RESPONSIVE STYLES ===== */
-/* Los estilos base ya usan clamp() para responsividad fluida.
-   Estas media queries manejan cambios estructurales mayores. */
+/* Base styles already use clamp() for fluid responsiveness.
+   These media queries handle major structural layout changes. */
 
 /* Remove tap highlight on mobile */
 * {
-	-webkit-tap-highlight-color: transparent;
-	-webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
 }
 
-/* Desktop Large - Solo ajustes de layout */
+/* Desktop Large - layout adjustments only */
 @media screen and (max-width:1366px) {
-	.menu-container.grid {
-		grid-template-columns: repeat(3, 1fr);
-	}
+    .menu-container.grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 /* Desktop Small */
 @media screen and (max-width:1023px) {
-	.menu-container.grid {
-		grid-template-columns: repeat(2, 1fr);
-	}
-    /* Contact - Ancho mayor en tablets */
-    .contact-section{
+    .menu-container.grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Contact - wider on tablets */
+    .contact-section {
         width: clamp(320px, 75%, 550px);
     }
-    /* Welcome Container - ocultar imagen en tablets */
-    .guitar-home{
+
+    /* Welcome Container - hide image on tablets */
+    .guitar-home {
         display: none;
     }
-    /* Welcome en una columna cuando se oculta la imagen */
-    .welcome-container{
+
+    /* Welcome in single column when image is hidden */
+    .welcome-container {
         grid-template-columns: 1fr;
     }
-    /* Botones home centrados */
-    .button-home-container{
+
+    /* Home buttons centered */
+    .button-home-container {
         justify-content: center;
         gap: 1rem;
     }
-    /* Why Choose Us - items más pequeños en tablets */
-    .why-choose-us-item{
+
+    /* Why Choose Us - smaller items on tablets */
+    .why-choose-us-item {
         flex: 1 1 calc(50% - 1rem);
         max-width: 280px;
     }
@@ -46,129 +51,150 @@
 
 /* Tablets & Mobile */
 @media screen and (max-width:768px) {
-	/* Grid Layout - 2 columnas en tablets */
-	.menu-container.grid {
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1.5rem;
-	}
-	
-	/* Header - una columna */
-	.header-container {
-		grid-template-columns: 1fr;
-		padding: 0.5rem 1rem;
-	}
+
+    /* Grid Layout - 2 columns on tablets */
+    .menu-container.grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* Header - single column */
+    .header-container {
+        grid-template-columns: 1fr;
+        padding: 0.5rem 1rem;
+    }
 
     /* Contact */
-    .contact-section{
+    .contact-section {
         width: clamp(280px, 95%, 500px);
     }
-    .form-group{
+
+    .form-group {
         width: 100%;
     }
-    /* Ocultar algunos dots para mejor rendimiento */
-    .dot--4, .dot--6 {
+
+    /* Hide some dots for better performance */
+    .dot--4,
+    .dot--6 {
         display: none;
     }
 
-    /* Welcome Container - una columna centrada */
-    .welcome-container{
+    /* Welcome Container - single centered column */
+    .welcome-container {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    .welcome-container > div:first-child {
+
+    .welcome-container>div:first-child {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .welcome-animation{
+
+    .welcome-animation {
         justify-content: center;
     }
-    .button-home-container{
+
+    .button-home-container {
         justify-content: center;
         flex-wrap: wrap;
         gap: 0.75rem;
     }
-    .view-products, .why-us{
+
+    .view-products,
+    .why-us {
         margin-right: 0;
         flex: none;
         padding: 0.8rem 1.2rem;
     }
 
-    /* Shopping Cart - ajustes móviles */
-    .modal-shoppingcart.data-shoppingcart{
+    /* Shopping Cart - mobile adjustments */
+    .modal-shoppingcart.data-shoppingcart {
         width: min(92vw, 450px);
         right: 4vw;
         left: auto;
         padding: 0.75rem;
     }
-    .modal-row{
+
+    .modal-row {
         grid-template-columns: 50px 1.3fr 0.9fr 1.3fr;
         font-size: 0.8rem;
         gap: 0.35rem;
     }
-    .empty-cart-button, .pay-cart-button{
+
+    .empty-cart-button,
+    .pay-cart-button {
         width: 46%;
         font-size: 0.8rem;
         padding: 0.4rem 0.5rem;
     }
 
-    .grid-item-modal img{
+    .grid-item-modal img {
         width: 45px;
         height: 45px;
     }
-    .add-cart-button{
+
+    .add-cart-button {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
         width: 90%;
     }
-    .grid-item-modal{
+
+    .grid-item-modal {
         padding: 0.25rem;
         font-size: 0.75rem;
     }
-    .add-del-cart{
+
+    .add-del-cart {
         width: 26px;
         height: 26px;
         min-width: 26px;
         min-height: 26px;
         font-size: 0.8rem;
     }
+
     .darkmode-shop {
         right: 1rem;
     }
+
     .modal-shoppingcart.empty-shoppingcart {
         font-size: 0.9rem;
         width: max-content;
     }
-    .welcome-title{
+
+    .welcome-title {
         font-size: 2rem;
     }
-    .modal-row.footer > div {
+
+    .modal-row.footer>div {
         gap: 0.5rem;
         align-items: stretch;
     }
+
     .empty-cart-button,
     .pay-cart-button {
         width: 100%;
         margin: 0.25rem 0;
         display: block !important;
     }
-	/* Dark/Light Mode Switch */
-    .mode-dark-light{
+
+    /* Dark/Light Mode Switch */
+    .mode-dark-light {
         bottom: 20px;
         left: 10px;
     }
-    
-    .mode-dark-light label{
+
+    .mode-dark-light label {
         height: 24px;
     }
 
-	/* Dark/Light Mode Position */
-    .mode-dark-light{
+    /* Dark/Light Mode Position */
+    .mode-dark-light {
         bottom: 200px;
     }
 
     /* Menu toggle button for mobile */
-    .menu-toggle-button{
+    .menu-toggle-button {
         display: block;
         position: absolute;
         right: 0;
@@ -176,16 +202,20 @@
         transform: translate(-7px, 35px);
         cursor: pointer;
         padding: 0.5rem;
-        min-width: 44px; /* Touch-friendly */
+        min-width: 44px;
+        /* Touch-friendly */
         min-height: 44px;
     }
+
     .menu-closed {
         display: none;
     }
-    .header-menu.menu-closed{
+
+    .header-menu.menu-closed {
         position: absolute;
     }
-    .menu-opened{
+
+    .menu-opened {
         position: absolute;
         top: 50px;
         right: 1rem;
@@ -202,120 +232,142 @@
         bottom: unset;
         left: unset;
     }
-    .menu-opened .menu-link{
+
+    .menu-opened .menu-link {
         padding: 0.75rem 0.5rem;
         border-bottom: 1px solid var(--border-light);
         width: 90%;
-        min-height: 44px; /* Touch-friendly */
+        min-height: 44px;
+        /* Touch-friendly */
         display: flex;
         align-items: center;
     }
-    .menu-opened .menu-link:last-child{
+
+    .menu-opened .menu-link:last-child {
         border-bottom: none;
     }
+
     /* Dark theme */
-    .dark-theme .menu-opened{
+    .dark-theme .menu-opened {
         background-color: var(--black);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         border: 1px solid rgba(255, 126, 0, 0.2);
         border-color: #b8a899;
     }
-    .dark-theme .menu-opened .menu-link{
+
+    .dark-theme .menu-opened .menu-link {
         color: var(--white);
     }
-    .dark-theme .header-menu::before{
+
+    .dark-theme .header-menu::before {
         border-color: transparent transparent var(--dark-overlay) transparent;
         filter: drop-shadow(0 -1px 1px rgba(255, 126, 0, 0.3));
     }
+
     /* Categories Buttons Container */
-    .categories-buttons-container .category-button{
+    .categories-buttons-container .category-button {
         flex: 1 1 auto;
     }
-    
-    /* Why Choose Us - items en columna */
-    .why-choose-us-grid{
+
+    /* Why Choose Us - stacked column layout */
+    .why-choose-us-grid {
         flex-direction: column;
         align-items: center;
         padding: 0 1rem;
     }
-    .why-choose-us-item{
+
+    .why-choose-us-item {
         flex: 1 1 auto;
         width: calc(100% - 2rem);
         max-width: 350px;
         min-width: 0;
         min-height: auto;
     }
-    .why-choose-us-title{
+
+    .why-choose-us-title {
         font-size: 1.8rem;
     }
 
     /* About Container */
-    .about-container{
+    .about-container {
         padding: 1.25rem;
     }
-    .about-section{
+
+    .about-section {
         padding: 2rem 1rem;
     }
 
     /* Main Container */
-    .main-container{
+    .main-container {
         padding: 0 1rem;
     }
 }
 
 @media screen and (max-width:576px) {
-    /* Grid Layout - una columna en móviles pequeños */
-	.menu-container.grid {
-		grid-template-columns: 1fr;
-		gap: 1.25rem;
-	}
-    
-    /* Botones home apilados y centrados */
-    .button-home-container{
+
+    /* Grid Layout - single column on small mobiles */
+    .menu-container.grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    /* Home buttons stacked and centered */
+    .button-home-container {
         flex-direction: column;
         align-items: center;
         width: 100%;
         gap: 0.75rem;
     }
-    .view-products, .why-us{
+
+    .view-products,
+    .why-us {
         width: 100%;
         max-width: 280px;
         margin: 0;
     }
-    
-    /* Shopping Cart - centrado en móviles pequeños */
-    .quantity-container{
+
+    /* Shopping Cart - centered on small mobiles */
+    .quantity-container {
         flex-direction: column;
         gap: 0.5rem;
     }
-    .modal-shoppingcart.data-shoppingcart{
-        position: fixed; /* Fixed para posicionar respecto al viewport */
-        width: calc(100vw - 1rem);
+
+    .modal-shoppingcart.data-shoppingcart {
+        position: fixed;
+        /* Fixed to position relative to the viewport */
+        width: calc(100vw - 2rem);
         max-width: none;
-        right: 0.5rem;
-        left: auto;
-        top: 60px;
-        padding: 0.5rem;
-        z-index: 11;
+        right: 1rem;
+        left: 1rem;
+        top: 80px;
+        padding: 0.75rem;
+        z-index: var(--z-cart);
+        box-shadow: var(--shadow-lg);
     }
-    .modal-row{
+
+    .modal-row {
         grid-template-columns: 40px 1.2fr 0.8fr 1.2fr;
         gap: 0.2rem;
         font-size: 0.75rem;
     }
-    .empty-cart-button, .pay-cart-button{
+
+    .empty-cart-button,
+    .pay-cart-button {
         width: 48%;
         font-size: 0.75rem;
         padding: 0.35rem 0.4rem;
     }
-    .grid-item-modal img{
+
+    .grid-item-modal img {
         width: 38px;
         height: 38px;
     }
-    .grid-item-modal{
+
+    .grid-item-modal {
         padding: 0.2rem;
     }
-    .add-del-cart{
+
+    .add-del-cart {
         width: 24px;
         height: 24px;
         min-width: 24px;
@@ -323,90 +375,101 @@
         font-size: 0.75rem;
         margin: 0.15rem;
     }
-    .quantity-cart{
+
+    .quantity-cart {
         width: 26px;
         font-size: 0.75rem;
     }
-    /* Modal carrito vacío en móviles pequeños */
-    .modal-shoppingcart.empty-shoppingcart{
+
+    /* Empty cart modal on small mobiles */
+    .modal-shoppingcart.empty-shoppingcart {
         position: fixed;
-        width: auto;
-        max-width: calc(100vw - 2rem);
-        right: 1rem;
-        left: auto;
-        top: 60px;
-        z-index: 1000;
+        width: min(90vw, 320px);
+        right: 50%;
+        transform: translateX(50%);
+        top: 80px;
+        z-index: var(--z-cart);
     }
-    
+
     /* Contact */
-    .contact-section{
+    .contact-section {
         width: 98%;
         border-radius: 8px;
     }
-    .submit-button{
+
+    .submit-button {
         width: 100%;
     }
-    
-    /* Ocultar más dots para rendimiento */
-    .dot--2, .dot--5 {
+
+    /* Hide more dots for performance */
+    .dot--2,
+    .dot--5 {
         display: none;
     }
-    
-    /* Why Choose Us - full width en móviles pequeños */
-    .why-choose-us{
+
+    /* Why Choose Us - full width on small mobiles */
+    .why-choose-us {
         padding: 0;
     }
-    .why-choose-us-grid{
+
+    .why-choose-us-grid {
         padding: 0 0.5rem;
     }
-    .why-choose-us-item{
+
+    .why-choose-us-item {
         width: 100%;
         max-width: none;
         padding: 1rem 0.75rem;
     }
-    .why-choose-us-title{
+
+    .why-choose-us-title {
         font-size: 1.4rem;
         padding: 0 0.5rem;
     }
 }
 
-/* Mobile Small - pantallas muy pequeñas */
+/* Mobile Small - very small screens */
 @media screen and (max-width:423px) {
-    /* Header ajustado */
-    .header-container{
+
+    /* Adjusted header */
+    .header-container {
         padding: 0.5rem 0.75rem;
     }
-    .logo-container{
+
+    .logo-container {
         font-size: 1rem;
     }
-    
-    /* Shopping Cart - posición mensaje pago */
-    .pay-message{
+
+    /* Shopping Cart - payment message position */
+    .pay-message {
         left: 50%;
         transform: translateX(-50%);
         width: 90%;
         text-align: center;
     }
-    .modal-row{
+
+    .modal-row {
         grid-template-columns: 1fr 1.5fr 0.8fr 1.2fr;
     }
-    
+
     /* Contact */
-    .form-group{
+    .form-group {
         width: 100%;
     }
-    
-    /* Solo mantener 2 dots decorativos */
+
+    /* Keep only 2 decorative dots */
     .dot--3 {
         display: none;
     }
-    
-    /* Botones cart más compactos */
-    .empty-cart-button, .pay-cart-button{
+
+    /* More compact cart buttons */
+    .empty-cart-button,
+    .pay-cart-button {
         width: 47%;
         padding: 0.4rem 0.3rem;
     }
-    .grid-item-modal > div{
+
+    .grid-item-modal>div {
         min-width: 100px
     }
 }
@@ -417,28 +480,33 @@
         width: 70px;
         height: 25px;
     }
+
     .menu-overlay {
         display: none;
     }
+
     .header-menu .menu-icon {
         display: none;
     }
-    .header-menu .menu-title{
+
+    .header-menu .menu-title {
         display: none;
     }
 }
 
-/* Landscape orientation en móviles */
+/* Landscape orientation on mobile */
 @media screen and (max-height: 500px) and (orientation: landscape) {
-    .welcome-container{
+    .welcome-container {
         gap: 1rem;
     }
-    .why-choose-us-grid{
+
+    .why-choose-us-grid {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
-    .why-choose-us-item{
+
+    .why-choose-us-item {
         flex: 1 1 calc(50% - 1rem);
         max-width: 280px;
         min-height: auto;

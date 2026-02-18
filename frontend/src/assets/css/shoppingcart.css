@@ -168,6 +168,7 @@
 .grid-item-modal {
 	font-family: var(--font-primary);
 	font-size: var(--fs-body-sm);
+	min-width: 0;
 }
 
 .grid-item-modal img {
