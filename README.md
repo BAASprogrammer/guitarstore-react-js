@@ -277,19 +277,11 @@ Este proyecto está disponible bajo licencia MIT.
 
 ---
 
-## 📧 Contacto
-
-Para consultas o sugerencias sobre el proyecto:
-- **Email**: contacto@guitare.com
-- **Redes Sociales**: Disponibles en la página de Acerca de
-
----
-
 ## 👨‍💻 Autor
 
 **BAASprogrammer** - Desarrollador del proyecto
 
 ---
 
-**Última actualización:** Febrero 2026  
+**Última actualización:** Julio 2026  
 **Versión:** 2.0.0
